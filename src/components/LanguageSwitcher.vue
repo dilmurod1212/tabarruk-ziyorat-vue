@@ -1,6 +1,6 @@
 <template>
   <div class="language-switcher max-md:hidden">
-    <img src="images/The UK.svg" alt="uk-icon" />
+    <img src="./images/The UK.svg" alt="uk-icon" />
   </div>
 </template>
 

@@ -4,7 +4,7 @@
       <div class="container">
         <div class="flex justify-between items-center">
           <div class="logo">
-            <a href="#"><img src="images/Logo.svg" alt="logo" /></a>
+            <a href="#"><img src="./images/Logo.svg" alt="logo" /></a>
           </div>
           <nav class="flex items-center gap-8">
             <Navbar />
