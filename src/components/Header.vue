@@ -32,7 +32,7 @@
 import LanguageSwitcher from './LanguageSwitcher.vue'
 import Navbar from './Navbar.vue'
 import SearchPanel from './SearchPanel.vue'
-import Button from '@/Uicomponent/Button.vue'
+import Button from '../UiComponent/Button.vue'
 </script>
 
 <style lang="scss" scoped></style>
