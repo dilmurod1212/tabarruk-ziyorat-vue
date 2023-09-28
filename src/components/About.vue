@@ -48,7 +48,7 @@ import { reactive } from 'vue'
 const panels = reactive([
   {
     text: 'Baku, Azerbaijan',
-    class: "bg-[url('./images/baku.jpeg')] ",
+    class: "bg-[url('../../public/images/baku.jpeg')] ",
     isActive: false,
     id: 1
   },
