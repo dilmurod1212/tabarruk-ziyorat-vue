@@ -1,16 +1,12 @@
 <template>
-  <div class="font-montserrat bg-black">
-    <!-- <RouterView /> -->
-    <Header />
-
-    <CountrySlider />
-    <About/>
+  <div class="bg-[#111325]">
+    <RouterView />
   </div>
 </template>
 <script setup lang="ts">
 import Header from '@/components/Header.vue'
 import CountrySlider from './components/CountrySlider.vue'
-import About from './components/About.vue';
+import About from './components/About.vue'
 </script>
 <style>
 .container {
