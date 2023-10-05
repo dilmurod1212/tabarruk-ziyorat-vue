@@ -14,8 +14,19 @@ module.exports = {
     extend: {
       backgroundImage: () => ({
         'hero-pattern':
-          "linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('/images/Image.png')"
+          "linear-gradient(to right bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4)), url('/images/Image.png')",
+      }),
+      backgroundColor: () => ({
+        'btn-red': '#E54545',
+        'btn-red-hover': '#C72727',
+        'btn-dark': '#2C2E3E',
+        'btn-dark-hover': '#181A2A'
+      }),
+      ringColor: () => ({
+        'btn-dark': '#2C2E3E',
+        'btn-red': '#E54545',
       })
+
     }
   },
   plugins: []

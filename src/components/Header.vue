@@ -9,9 +9,12 @@
           <nav class="flex items-center gap-8">
             <Navbar />
             <LanguageSwitcher />
-            <SearchPanel />
+            <SearchPanel @click="showSearchBar" />
             <i class="fas fa-bars text-white open hidden max-md:block"></i>
           </nav>
+        </div>
+        <div v-show="store.searchBar">
+          <CSearch />
         </div>
         <div class="text-center h-[75vh] flex flex-col items-center justify-center text-white">
           <p><i class="fa-solid fa-location-dot mx-1"></i>Samarkand, Uzbekistan</p>
@@ -21,7 +24,7 @@
             madrasas adorned in blue tiles and calligraphic inscriptions, dating back to the 15th
             century.
           </p>
-          <Button class="bg-[#E54545]">Explore <i class="fas fa-arrow-right"></i></Button>
+          <Button type="button" btnClass=""  variant="red">Explore <i class="fas fa-arrow-right"></i></Button>
         </div>
       </div>
     </header>
@@ -32,7 +35,24 @@
 import LanguageSwitcher from './LanguageSwitcher.vue'
 import Navbar from './Navbar.vue'
 import SearchPanel from './SearchPanel.vue'
-import Button from '../UiComponent/Button.vue'
+import Button from '@/components/Form/Button.vue'
+import CInput from './Form/CInput.vue'
+import CSearch from './CSearch.vue'
+
+import { onMounted, ref } from 'vue'
+import { useCounterStore } from '@/stores/counter'
+import type CInputVue from './Form/CInput.vue'
+// import CSearch from './CSearch.vue'
+const input = ref('')
+const store = useCounterStore()
+
+const showSearchBar = () => {
+  store.searchBar = !store.searchBar
+}
+
+onMounted(() => {
+  // console.log(store.searchBar)
+})
 </script>
 
 <style lang="scss" scoped></style>

@@ -22,7 +22,7 @@
   flex: 0.5;
   margin: 5px;
   position: relative;
-  transition: flex 0.7s ease-in;
+  transition: flex 0.3s ease-in;
   cursor: pointer;
 }
 .panel h3 {

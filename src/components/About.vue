@@ -18,56 +18,22 @@
           </div>
         </div>
         <div class="btn-group flex">
-          <Button class="bg-[#E54545]">Explore <i class="fas fa-globe"></i></Button>
-          <Button class="bg-[#2C2E3E] mx-2"
+          <Button class="" variant="red">Explore <i class="fas fa-globe"></i></Button>
+          <Button class="mx-2 " variant="dark"
             >More about us <i class="fas fa-arrow-right"></i
           ></Button>
         </div>
       </div>
-      <div class="wrapper max-md:w-full">
-        <div class="images flex gap-2">
-          <div
-            v-for="(el, idx) in panels"
-            :key="idx"
-            class="panel bg-[url('./images/baku.jpeg')]"
-            :class="[el.class, el.isActive ? ' active' : '']"
-            @click="() => actived(el.id)"
-          >
-            <h3>{{ el.text }}</h3>
-          </div>
-        </div>
-      </div>
+      <CHoverCard />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import Button from '@/UiComponent/Button.vue'
+import Button from '@/components/Form/Button.vue'
 
 import { reactive } from 'vue'
-const panels = reactive([
-  {
-    text: 'Baku, Azerbaijan',
-    class: "bg-[url('/images/baku.jpeg')] ",
-    isActive: false,
-    id: 1
-  },
-  { text: 'Bakuu, Azerbaijan', class: "bg-[url('/images/bukhara.jpeg')]", isActive: false, id: 2 },
-  { text: 'Bakuuu, Azerbaijan', class: "bg-[url('/images/turcey.jpg')]", isActive: true, id: 3 },
-  { text: 'Bakuuuu, Azerbaijan', class: "bg-[url('/images/hungary.jpg')]", isActive: false, id: 4 }
-])
-
-const actived = (id) => {
-  panels.forEach((item) => {
-    item.isActive = false
-    console.log(item)
-    if (item.id === id) {
-      // item.class = ' active'
-      item.isActive = true
-      console.log(item)
-    }
-  })
-}
+import CHoverCard from './CHoverCard.vue'
 </script>
 
 <style scoped></style>
