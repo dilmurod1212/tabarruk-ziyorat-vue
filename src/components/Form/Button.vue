@@ -1,0 +1,34 @@
+<template>
+  <button
+    class="py-3 px-7 rounded-lg active:scale-105 transition duration-200"
+    v-bind="{ type }"
+    :class="[clasList, btnClass]"
+  >
+    <slot></slot>
+  </button>
+</template>
+
+<script setup lang="ts">
+import { defineProps, onMounted, ref } from 'vue'
+
+interface Props {
+  type?: string
+  variant: string
+  btnClass?: string
+}
+const props = defineProps<Props>()
+const clasList = ref('')
+
+if (props.variant == 'red') {
+  clasList.value = 'bg-btn-red hover:bg-btn-red-hover active:ring-4 active:ring-btn-red'
+} else if (props.variant == 'dark') {
+  clasList.value = 'bg-btn-dark hover:bg-btn-dark-hover active:ring-4 active:ring-btn-dark'
+} else {
+  clasList.value = 'bg-btn-dark hover:bg-btn-dark-hover active:ring-4 active:ring-btn-dark'
+}
+onMounted(() => {
+  console.log(props.variant)
+})
+</script>
+
+<style lang="scss" scoped></style>

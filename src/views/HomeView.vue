@@ -19,6 +19,15 @@
   <!-- <CountrySliderVue/> -->
   <Header />
   <About />
+  <div class="container flex justify-between max-md:flex-col gap-4 max-lg:flex-wrap">
+    <CCountryInfo
+      v-for="(el, idx) in countryInfo"
+      :key="idx"
+      :img="el.img"
+      :count="el.count"
+      :info="el.info"
+    />
+  </div>
   <div class="container">
     <div class="title text-white text-center my-4">
       <h2 class="font-playfair text-4xl">How many countries?</h2>
@@ -45,6 +54,7 @@ import Header from '@/components/Header.vue'
 import About from '@/components/About.vue'
 import CountrySliderVue from '@/components/CountrySlider.vue'
 import CCountriesFlag from '@/components/CCountriesFlag.vue'
+import CCountryInfo from '@/components/CCountryInfo.vue'
 const input = ref('')
 const flagArr = reactive([
   { id: 1, flag: '/images/flags-svg/Uzbekistan.svg', country: 'Uzbekistan', destination: 32 },
@@ -54,5 +64,12 @@ const flagArr = reactive([
   { id: 4, flag: '/images/flags-svg/Flag (4).svg', country: 'Hungary', destination: 19 },
   { id: 5, flag: '/images/flags-svg/Flag (5).svg', country: 'Kazakhstan', destination: 21 },
   { id: 6, flag: '/images/flags-svg/Flag (6).svg', country: 'Kyrgyzstan', destination: 9 }
+])
+
+const countryInfo = reactive([
+  { img: '/images/mosque/fa-solid_mosque.svg', info: 'Attractions', count: 142 },
+  { img: '/images/mosque/Mask group.svg', info: 'Destinations', count: 254 },
+  { img: '/images/mosque/Mask group (1).svg', info: 'Countries', count: 7 },
+  { img: '/images/mosque/Mask group (2).svg', info: 'Religions', count: 3 }
 ])
 </script>

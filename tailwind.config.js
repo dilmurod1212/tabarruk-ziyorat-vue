@@ -25,7 +25,7 @@ module.exports = {
       ringColor: () => ({
         'btn-dark': '#2C2E3E',
         'btn-red': '#E54545',
-      })
+      }),
 
     }
   },

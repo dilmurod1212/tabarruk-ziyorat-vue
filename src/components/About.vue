@@ -32,7 +32,6 @@
 <script setup lang="ts">
 import Button from '@/components/Form/Button.vue'
 
-import { reactive } from 'vue'
 import CHoverCard from './CHoverCard.vue'
 </script>
 
