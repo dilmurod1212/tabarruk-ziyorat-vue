@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="flex bg-white/[0.04] p-4 rounded-lg relative w-[250px] max-md:w-full "
-  >
+  <div class="flex bg-white/[0.04] p-4 rounded-lg relative w-[250px] max-md:w-full overflow-hidden">
     <div class="text-white">
       <h3 class="text-4xl font-bold">{{ count }}</h3>
       <p class="text-xl">{{ info }}</p>

@@ -1,7 +1,7 @@
 <template>
   <button
+    :type="type"
     class="py-3 px-7 rounded-lg active:scale-105 transition duration-200"
-    v-bind="{ type }"
     :class="[clasList, btnClass]"
   >
     <slot></slot>
