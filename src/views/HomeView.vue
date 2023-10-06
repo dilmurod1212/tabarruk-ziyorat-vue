@@ -41,6 +41,7 @@
       />
     </div>
   </div>
+  <CReligions />
 </template>
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
@@ -52,6 +53,7 @@ import CountrySliderVue from '@/components/CountrySlider.vue'
 import CCountriesFlag from '@/components/CCountriesFlag.vue'
 import CCountryInfo from '@/components/CCountryInfo.vue'
 import CTitle from '@/components/CTitle.vue'
+import CReligions from '@/components/Religions/CReligions.vue'
 const input = ref('')
 const flagArr = reactive([
   { id: 1, flag: '/images/flags-svg/Uzbekistan.svg', country: 'Uzbekistan', destination: 32 },

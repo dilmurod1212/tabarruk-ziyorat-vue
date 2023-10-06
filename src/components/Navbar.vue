@@ -1,5 +1,5 @@
 <template>
-  <ul class="flex gap-4 text-white max-md:hidden relative">
+  <ul class="flex gap-4 text-white max-lg:hidden relative">
     <li class="hover:opacity-40 font-bold transition-all">
       <a href="#">About us</a>
     </li>
