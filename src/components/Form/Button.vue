@@ -1,7 +1,7 @@
 <template>
   <button
     :type="type"
-    class="py-3 px-7 rounded-lg active:scale-105 transition duration-200"
+    class="py-3 px-7 rounded-lg active:scale-90 transition duration-200"
     :class="[clasList, btnClass]"
   >
     <slot></slot>

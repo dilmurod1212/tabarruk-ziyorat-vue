@@ -31,7 +31,7 @@
 
 <script lang="ts">
 import { reactive } from 'vue'
-import { Countries } from '../constants/countrySlide.js'    
+import { countries } from '../data/countrySlide.js'    
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
 // Import Swiper styles
@@ -61,3 +61,4 @@ export default {
 </script>
 
 <style scoped></style>
+../data/countrySlide.js

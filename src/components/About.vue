@@ -13,8 +13,8 @@
         <div class="brands my-4">
           <h4>Our supporters</h4>
           <div class="flex my-2 gap-2">
-            <img src="../../public/images/Emblem_of_the_Organization_of_Turkic_States.svg" alt="" />
-            <img src="../../public/images/golden-globe-svgrepo-com.svg" alt="" />
+            <img src="/images/Emblem_of_the_Organization_of_Turkic_States.svg" alt="" />
+            <img src="/images/golden-globe-svgrepo-com.svg" alt="" />
           </div>
         </div>
         <div class="btn-group flex">

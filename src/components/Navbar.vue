@@ -10,7 +10,7 @@
         class="absolute top-[100%] left-0 right-auto grid grid-cols-2 gap-2 bg-white/20 border border-white/30 backdrop-blur-xl rounded-xl p-2"
       >
         <li
-          v-for="(el, idx) in countries"
+          v-for="(el, idx) in dropdownCountries"
           :key="idx"
           class="p-2 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2 group cursor-pointer"
         >
@@ -79,40 +79,7 @@ import { ref, reactive } from 'vue'
 const state = ref(false)
 const showReligion = ref(false)
 
-const countries = reactive([
-  {
-    id: 1,
-    flag: '/images/dropdown-flag-icons/Uzbekistan.svg',
-    country: 'Uzbekistan',
-    destination: 32
-  },
-  { id: 1, flag: '/images/dropdown-flag-icons/Turkiye.svg', country: 'Türkiye', destination: 27 },
-  {
-    id: 2,
-    flag: '/images/dropdown-flag-icons/Turkmenistan.svg',
-    country: 'Turkmenistan',
-    destination: 27
-  },
-  {
-    id: 3,
-    flag: '/images/dropdown-flag-icons/Azerbaijan.svg',
-    country: 'Azerbaijan',
-    destination: 12
-  },
-  { id: 4, flag: '/images/dropdown-flag-icons//Hungary.svg', country: 'Hungary', destination: 19 },
-  {
-    id: 5,
-    flag: '/images/dropdown-flag-icons/Kazakhstan.svg',
-    country: 'Kazakhstan',
-    destination: 21
-  },
-  {
-    id: 6,
-    flag: '/images/dropdown-flag-icons/Kyrgyzstan.svg',
-    country: 'Kyrgyzstan',
-    destination: 9
-  }
-])
+import { dropdownCountries } from '@/data/dropdownCountries.js'
 const religions = reactive([
   { img: '/images/religions/Islam (1).svg', religion: 'Islam', destination: '32' },
   { img: '/images/religions/Islam.svg', religion: 'Christianity', destination: '24' },

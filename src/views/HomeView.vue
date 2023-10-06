@@ -29,11 +29,7 @@
     />
   </div>
   <div class="container">
-    <div class="title text-white text-center my-4">
-      <h2 class="font-playfair text-4xl">How many countries?</h2>
-      <div class="h-[2px] w-2/12 max-md:w-2/6 bg-red-400 mx-auto mt-3"></div>
-      <p class="text-xl mt-3">All countries that we represent</p>
-    </div>
+    <CTitle title="How many countries?" descr="All countries that we represent" divClass="mt-12" />
     <div class="flex max-md:grid max-md:grid-cols-2 gap-4 flex-wrap justify-center">
       <CCountriesFlag
         v-for="(country, idx) in flagArr"
@@ -55,6 +51,7 @@ import About from '@/components/About.vue'
 import CountrySliderVue from '@/components/CountrySlider.vue'
 import CCountriesFlag from '@/components/CCountriesFlag.vue'
 import CCountryInfo from '@/components/CCountryInfo.vue'
+import CTitle from '@/components/CTitle.vue'
 const input = ref('')
 const flagArr = reactive([
   { id: 1, flag: '/images/flags-svg/Uzbekistan.svg', country: 'Uzbekistan', destination: 32 },
