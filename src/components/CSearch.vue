@@ -1,13 +1,17 @@
 <template>
-  <div tabindex="0" @focusout="hideSearchBar" class="fixed w-4/6 right-20">
+  <div
+    tabindex="0"
+    @focusout="hideSearchBar"
+    class="absolute top-[-50%] right-10 w-[600px] max-lg:w-[400px] z-10 backdrop-blur-xl"
+    :class="searchClass"
+  >
     <div>
       <CInput
         type="text"
         placeholder="Enter a key word"
         v-model="search"
         @on-focus="show = true"
-        @key-up="getUser"
-        getUser="getUser"
+        class="z-10"
       />
     </div>
     <div v-if="show && search.length > 2">
@@ -28,11 +32,16 @@ import { useCounterStore } from '@/stores/counter'
 import CInput from './Form/CInput.vue'
 // import { countries } from '@/constants/countrySlide.js'
 import { ref, reactive, onMounted } from 'vue'
+interface Props {
+  searchClass: string
+}
+defineProps<Props>()
+
 const store = useCounterStore()
 const search = ref('')
 const text = ref('hello text')
 const show = ref(false)
-let userArr = ref(<array>[])
+let userArr = reactive([])
 
 const hideSearchBar = () => {
   // store.searchBar = false
@@ -41,19 +50,10 @@ const hideSearchBar = () => {
 const getUser = async () => {
   await fetch('https://jsonplaceholder.typicode.com/users')
     .then((res) => res.json())
-    .then((json) => (userArr.value = json))
-  console.log('getUser')
+    .then((json) => (userArr = json))
 }
 
 onMounted(() => {
   getUser()
-  // console.log(text.value)
-  // console.log(userArr.value)
-  console.log(userArr.value)
 })
-const filterUser = () => {
-  const newArr = userArr.filter((item) =>
-    item.title.toLowerCase().includes(search.value.toLowerCase())
-  )
-}
 </script>

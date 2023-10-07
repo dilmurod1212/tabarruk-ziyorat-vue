@@ -1,4 +1,4 @@
-export const countries = [
+export const countriess = [
   {
     id: 1,
     image: './images/Image (1).png',

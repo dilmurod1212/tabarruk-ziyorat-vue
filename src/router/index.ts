@@ -7,13 +7,13 @@ const router = createRouter({
     {
       path: '/',
       name: 'Home',
-      component: () => import('@/views/HomeView.vue'),
+      component: () => import('@/views/HomeView.vue')
     },
     {
       path: '/about',
       name: 'About',
       component: () => import('../views/AboutView.vue')
-    }
+    },
   ]
 })
 // router.beforeEach((to, from, next) => {

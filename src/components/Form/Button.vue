@@ -26,9 +26,7 @@ if (props.variant == 'red') {
 } else {
   clasList.value = 'bg-btn-dark hover:bg-btn-dark-hover active:ring-4 active:ring-btn-dark'
 }
-onMounted(() => {
-  console.log(props.variant)
-})
+
 </script>
 
 <style lang="scss" scoped></style>

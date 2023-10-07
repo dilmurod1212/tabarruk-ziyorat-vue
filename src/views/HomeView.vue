@@ -16,8 +16,9 @@
       <CSearch />
     </main>
   </div> -->
-  <!-- <CountrySliderVue/> -->
   <Header />
+  <!-- <CountrySlider /> -->
+
   <About />
   <div class="container flex justify-between max-md:flex-col gap-4 max-lg:flex-wrap">
     <CCountryInfo
@@ -28,42 +29,22 @@
       :info="el.info"
     />
   </div>
-  <div class="container">
-    <CTitle title="How many countries?" descr="All countries that we represent" divClass="mt-12" />
-    <div class="flex max-md:grid max-md:grid-cols-2 gap-4 flex-wrap justify-center">
-      <CCountriesFlag
-        v-for="(country, idx) in flagArr"
-        :key="idx"
-        :id="country.id"
-        :flag="country.flag"
-        :destination="country.destination"
-        :country="country.country"
-      />
-    </div>
-  </div>
+  <CCountries />
   <CReligions />
+  <CNews :news="news" />
 </template>
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-import CInput from '@/components/Form/CInput.vue'
-import CSearch from '@/components/CSearch.vue'
+import { ref, reactive, onMounted } from 'vue'
 import Header from '@/components/Header.vue'
-import About from '@/components/About.vue'
-import CountrySliderVue from '@/components/CountrySlider.vue'
-import CCountriesFlag from '@/components/CCountriesFlag.vue'
-import CCountryInfo from '@/components/CCountryInfo.vue'
-import CTitle from '@/components/CTitle.vue'
+import About from '@/components/About/About.vue'
+import CountrySlider from '@/components/CountrySlider.vue'
+import CCountries from '@/components/Countries/CCountries.vue'
+import CCountryInfo from '@/components/CardInfo/CCountryInfo.vue'
 import CReligions from '@/components/Religions/CReligions.vue'
+import CNews from '@/components/News/CNews.vue'
+import news from '@/data/newsCard.js'
+
 const input = ref('')
-const flagArr = reactive([
-  { id: 1, flag: '/images/flags-svg/Uzbekistan.svg', country: 'Uzbekistan', destination: 32 },
-  { id: 1, flag: '/images/flags-svg/Flag (1).svg', country: 'Türkiye', destination: 27 },
-  { id: 2, flag: '/images/flags-svg/Flag (2).svg', country: 'Turkmenistan', destination: 27 },
-  { id: 3, flag: '/images/flags-svg/Flag (3).svg', country: 'Azerbaijan', destination: 12 },
-  { id: 4, flag: '/images/flags-svg/Flag (4).svg', country: 'Hungary', destination: 19 },
-  { id: 5, flag: '/images/flags-svg/Flag (5).svg', country: 'Kazakhstan', destination: 21 },
-  { id: 6, flag: '/images/flags-svg/Flag (6).svg', country: 'Kyrgyzstan', destination: 9 }
-])
 
 const countryInfo = reactive([
   { img: '/images/mosque/fa-solid_mosque.svg', info: 'Attractions', count: 142 },

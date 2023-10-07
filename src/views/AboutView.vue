@@ -1,21 +1,16 @@
 <template>
-  <div class="about">
-    <RouterLink to="/" style="font-size: 24px">Home page</RouterLink>
-    <h1>This is an about page</h1>
+  <div class="about min-h-screen">
+    <RouterLink to="/" style="font-size: 24px" class="text-white"> Home page</RouterLink>
+    <div class="flex justify-between gap-4">
+      <NewsCardItem />
+      <NewsCardItem />
+      <NewsCardItem />
+      <NewsCardItem />
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-import { useRoute } from 'vue-router';
-const route = useRoute()
-console.log(route);
-
+import { useRoute } from 'vue-router'
+import NewsCardItem from '@/components/News/NewsCardItem.vue'
 </script>
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>
+<style></style>

@@ -53,10 +53,9 @@ const actived = (id: number) => {
   background-size: auto 110%;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 20px;
+  border-radius: 10px;
   height: 60vh;
-  flex: 0.5;
-  margin: 5px;
+  flex: 1;
   position: relative;
   transition: flex 0.3s ease-in;
   cursor: pointer;

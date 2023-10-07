@@ -29,14 +29,14 @@ const religions = reactive([
       'This website is created to share information about historical, unique places located in Turkic countries. '
   },
   {
-    img: '/images/religions/islam-icon.svg',
-    religion: 'ISLAM',
+    img: '/images/religions/christian-icon.svg',
+    religion: 'CHRISTIANITY',
     descr:
       'This website is created to share information about historical, unique places located in Turkic countries. '
   },
   {
-    img: '/images/religions/islam-icon.svg',
-    religion: 'ISLAM',
+    img: '/images/religions/budism-icon.svg',
+    religion: 'BUDDISM',
     descr:
       'This website is created to share information about historical, unique places located in Turkic countries. '
   }

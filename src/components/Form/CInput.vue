@@ -15,7 +15,11 @@
       @keyup="emit('focus-out')"
     />
     <!-- <slot name="suffix"></slot> -->
-    <i class="fas fa-close text-xl px-4 cursor-pointer text-white" @click="modelValue = ''"></i>
+    <i
+      class="fas fa-close text-xl px-4 cursor-pointer text-white"
+      @click="modelValue = ''"
+      v-if="modelValue.length > 2"
+    ></i>
   </div>
 </template>
 
