@@ -4,9 +4,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import Header from '@/components/Header.vue'
-import CountrySlider from './components/CountrySlider.vue'
-import About from './components/About.vue'
 </script>
 <style>
 .container {
