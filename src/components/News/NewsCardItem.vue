@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import { INews } from '@/types/news.ts'
 const getDate = () => {
   const date = new Date().getDay()
   const month = new Date().getMonth()

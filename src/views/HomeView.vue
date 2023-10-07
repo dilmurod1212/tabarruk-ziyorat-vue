@@ -52,4 +52,5 @@ const countryInfo = reactive([
   { img: '/images/mosque/Mask group (1).svg', info: 'Countries', count: 7 },
   { img: '/images/mosque/Mask group (2).svg', info: 'Religions', count: 3 }
 ])
+
 </script>
