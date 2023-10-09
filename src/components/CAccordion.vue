@@ -1,6 +1,6 @@
 <template>
   <div
-    class="p-5 rounded-xl border border-white/20 bg-white/[0.04] cursor-pointer"
+    class="p-5 rounded-xl border border-white/20 bg-white/[0.04] text-white"
     v-for="(el, idx) in accordions"
     :key="idx"
   >
@@ -11,7 +11,7 @@
       </div>
       <div
         @click="() => showAccordion(el.id)"
-        class="rounded-lg bg-white/10 border border-white/10"
+        class="rounded-lg bg-white/10 border border-white/10 cursor-pointer"
       >
         <i
           class="fas fa-chevron-down transition-all p-2"
@@ -29,8 +29,9 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 const state = ref(true)
+
 const showAccordion = (id) => {
   props.accordions?.forEach((item) => {
     if (item.id == id) {
