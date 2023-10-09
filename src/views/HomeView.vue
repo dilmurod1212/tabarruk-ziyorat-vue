@@ -40,7 +40,7 @@
 import { ref, reactive, onMounted } from 'vue'
 import Header from '@/components/Header.vue'
 import About from '@/components/About/About.vue'
-import CountrySlider from '@/components/CountrySlider.vue'
+// import CountrySlider from '@/components/CountrySlider.vue'
 import CCountries from '@/components/Countries/CCountries.vue'
 import CCountryInfo from '@/components/CardInfo/CCountryInfo.vue'
 import CReligions from '@/components/Religions/CReligions.vue'
