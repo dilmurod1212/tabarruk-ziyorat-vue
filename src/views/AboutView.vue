@@ -1,16 +1,66 @@
 <template>
-  <div class="about min-h-screen">
-    <RouterLink to="/" style="font-size: 24px" class="text-white"> Home page</RouterLink>
-    <div class="flex justify-between gap-4">
-      <NewsCardItem />
-      <NewsCardItem />
-      <NewsCardItem />
-      <NewsCardItem />
+  <div class="bg-blue-950 min-h-screen text-white">
+    <h1>hello</h1>
+    <div class="grid grid-cols-2 gap-4">
+      <CAccordion :accordions="accordions" />
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import NewsCardItem from '@/components/News/NewsCardItem.vue'
+import CAccordion from '@/components/CAccordion.vue'
+import { reactive } from 'vue'
+
+const accordions = reactive([
+  {
+    id: 1,
+    show: false,
+    icon: '/images/accordion-icon/flag.svg',
+    title: 'What is the goal of this project? ',
+    descr:
+      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
+  },
+  {
+    id: 2,
+    show: true,
+    icon: '/images/accordion-icon/bolt.svg',
+    title: 'How many countries in Organization of Turkic states?',
+    descr:
+      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
+  },
+  {
+    id: 3,
+    show: false,
+    icon: '/images/accordion-icon/flag.svg',
+    title: 'What is the goal of this project? ',
+    descr:
+      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
+  },
+  {
+    id: 4,
+    show: false,
+    icon: '/images/accordion-icon/location-plus.svg',
+    title: 'How many countries in Organization of Turkic states?',
+    descr:
+      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
+  },
+  {
+    id: 5,
+    show: false,
+    icon: '/images/accordion-icon/flag.svg',
+    title: 'How many countries in Organization of Turkic states?',
+    descr:
+      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
+  },
+  {
+    id: 6,
+    show: false,
+    icon: '/images/accordion-icon/user-heart-alt.svg',
+    title: 'How many countries in Organization of Turkic states?',
+    descr:
+      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
+  }
+])
 </script>
 <style></style>

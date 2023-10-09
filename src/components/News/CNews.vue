@@ -23,9 +23,7 @@ import { onMounted } from 'vue'
 defineProps({
   news: Array
 })
-onMounted(() => {
-  console.log(news)
-})
+ 
 </script>
 
 <style scoped></style>

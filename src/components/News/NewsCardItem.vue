@@ -35,6 +35,7 @@ interface Props {
     title: string
     img: string
     alt?: string
+    date: string
   }
 }
 defineProps<Props>()
