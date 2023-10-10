@@ -2,14 +2,14 @@
   <div class="bg-blue-950 min-h-screen text-white">
     <h1>hello</h1>
     <div class="grid grid-cols-2 max-md:grid-cols-1 gap-4">
-      <CAccordion :accordions="accordions" />
+      <!-- <CAccordion :accordions="accordions" /> -->
     </div>
   </div>
 </template>
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
 import NewsCardItem from '@/components/News/NewsCardItem.vue'
-import CAccordion from '@/components/CAccordion.vue'
+// import CAccordion from '@/components/accordion/CAccordion.vue'
 import { reactive } from 'vue'
 
 const accordions = reactive([
