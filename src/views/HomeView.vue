@@ -18,8 +18,10 @@
   </div> -->
   <Header />
   <!-- <CountrySlider /> -->
+  <div class="mx-auto">
+    <About />
+  </div>
 
-  <About />
   <div class="container flex justify-between max-md:flex-col gap-4 max-lg:flex-wrap">
     <CCountryInfo
       v-for="(el, idx) in countryInfo"
@@ -32,8 +34,17 @@
   <CCountries />
   <CReligions />
   <CNews :news="news" />
-  <div class="grid grid-cols-2 max-md:grid-cols-1 gap-4 mt-4 py-8">
-    <CAccordion :accordions="accordions" />
+  <div class="container grid grid-cols-2 max-md:grid-cols-1 gap-4 py-8">
+    <CAccordion
+      v-for="(el, idx) in accordions"
+      :key="idx"
+      :descr="el.descr"
+      :icon="el.icon"
+      :id="el.id"
+      :show="activeItem === el.id"
+      :title="el.title"
+      @click="showItem(el.id, el.show)"
+    />
   </div>
 </template>
 <script setup lang="ts">
@@ -45,13 +56,21 @@ import CCountries from '@/components/Countries/CCountries.vue'
 import CCountryInfo from '@/components/CardInfo/CCountryInfo.vue'
 import CReligions from '@/components/Religions/CReligions.vue'
 import CNews from '@/components/News/CNews.vue'
-import CAccordion from '@/components/CAccordion.vue'
+import CAccordion from '@/components/Accordion/CAccordion.vue'
 
 import news from '@/data/newsCard.js'
 import { Accordion } from '@/data/accordion.js'
 
 const input = ref('')
+const activeItem = ref(0 || null)
 
+const showItem = (id, show) => {
+  if (activeItem.value == id) {
+    activeItem.value = null
+  } else {
+    activeItem.value = id
+  }
+}
 const countryInfo = reactive([
   { img: '/images/mosque/fa-solid_mosque.svg', info: 'Attractions', count: 142 },
   { img: '/images/mosque/Mask group.svg', info: 'Destinations', count: 254 },
@@ -69,7 +88,7 @@ const accordions = reactive([
   },
   {
     id: 2,
-    show: true,
+    show: false,
     icon: '/images/accordion-icon/bolt.svg',
     title: 'How many countries in Organization of Turkic states?',
     descr:

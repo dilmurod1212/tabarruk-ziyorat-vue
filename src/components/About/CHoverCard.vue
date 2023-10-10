@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper max-md:w-full">
+  <div class="wrapper w-full">
     <div class="images flex gap-2">
       <div
         v-for="(el, idx) in panels"
@@ -41,7 +41,6 @@ const actived = (id: number) => {
 <style scoped>
 .wrapper {
   overflow: hidden;
-  width: 85vw;
 }
 .images {
   display: flex;
@@ -54,7 +53,7 @@ const actived = (id: number) => {
   background-position: center;
   background-repeat: no-repeat;
   border-radius: 10px;
-  height: 60vh;
+  height: 50vh;
   flex: 1;
   position: relative;
   transition: flex 0.3s ease-in;

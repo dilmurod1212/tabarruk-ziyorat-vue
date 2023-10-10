@@ -1,12 +1,12 @@
 <template>
   <div
-    class="text-white p-4 bg-[#202233] rounded-xl hover:shadow-lg hover:shadow-red-500/50 group duration-200"
+    class="text-white p-4 max-md:p-2 bg-[#202233] rounded-xl hover:shadow-lg hover:shadow-red-500/50 group duration-200"
   >
-    <img :src="item.img" :alt="item.alt" class="w-full bg-red-400 rounded-xl" />
-    <h3 class="mt-4 group-hover:text-red-500 transition-all">
+    <img :src="item.img" :alt="item.alt" class="w-full bg-red-400 rounded-lg" />
+    <h3 class="mt-4 group-hover:text-red-500 transition-all max-md:text-sm">
       {{ item.title }}
     </h3>
-    <p class="text-sm text-white/60 font-normal my-2">
+    <p class="text-sm max-md:text-xs text-white/60 font-normal my-2">
       {{ item.descr }}
     </p>
     <div class="flex justify-between items-center">
