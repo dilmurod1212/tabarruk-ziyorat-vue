@@ -14,16 +14,20 @@
         ></i>
       </div>
     </div>
-    <p
-      class="mt-5 pt-5 pl-0 font-light border-t border-t-white/20 transition-all"
-      :class="{ 'hidden opacity-0 transition-all': !show }"
-    >
-      {{ descr }}
-    </p>
+    <Transition name="slide-fade">
+      <p
+        class="mt-5 pt-5 pl-0 font-light border-t border-t-white/20 transition-all"
+        :class="{ 'hidden opacity-0 transition-all': !show }"
+      >
+        {{ descr }}
+      </p>
+    </Transition>
   </div>
 </template>
 
 <script setup lang="ts">
+import { Transition } from 'vue'
+// import { CollapseTransition } from '@ivanv/vue-collapse-transition'
 interface Props {
   id: number
   title: string
@@ -34,4 +38,5 @@ interface Props {
 defineProps<Props>()
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

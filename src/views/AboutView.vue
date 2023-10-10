@@ -4,6 +4,7 @@
     <div class="grid grid-cols-2 max-md:grid-cols-1 gap-4">
       <!-- <CAccordion :accordions="accordions" /> -->
     </div>
+    <CInstagram />
   </div>
 </template>
 <script setup lang="ts">
@@ -11,6 +12,7 @@ import { useRoute } from 'vue-router'
 import NewsCardItem from '@/components/News/NewsCardItem.vue'
 // import CAccordion from '@/components/accordion/CAccordion.vue'
 import { reactive } from 'vue'
+import CInstagram from '@/components/Instagram/CInstagram.vue'
 
 const accordions = reactive([
   {

@@ -13,9 +13,11 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@ivanv/vue-collapse-transition": "^1.0.2",
     "pinia": "^2.1.6",
     "swiper": "^10.3.0",
     "vue": "^3.3.4",
+    "vue-highlight-words": "^3.0.1",
     "vue-router": "^4.2.4",
     "vue3-marquee": "^4.1.0"
   },

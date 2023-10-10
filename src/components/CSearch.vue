@@ -11,6 +11,7 @@
         placeholder="Enter a key word"
         v-model="search"
         @on-focus="show = true"
+        @input="searchUser"
         class="z-10"
       />
     </div>
@@ -21,7 +22,7 @@
           :key="idx"
           class="p-4 pl-0 border-b border-b-white/[0.08] last:border-none cursor-pointer hover:opacity-75"
         >
-          <p class="text-white">{{ user.name }}</p>
+          <p class="text-white">{{ userArr.length ? user.name : 'topilmadi' }}</p>
         </li>
       </ul>
     </div>
@@ -42,6 +43,7 @@ const search = ref('')
 const text = ref('hello text')
 const show = ref(false)
 let userArr = reactive([])
+let newUserArr = reactive([])
 
 const hideSearchBar = () => {
   // store.searchBar = false
@@ -52,7 +54,20 @@ const getUser = async () => {
     .then((res) => res.json())
     .then((json) => (userArr = json))
 }
+const searchUser = () => {
+  const filteredUser = userArr.filter((item) =>
+    item.name.toLowerCase().includes(search.value.trim().toLowerCase())
+  )
+  if (filteredUser.length) {
+    newArr(filteredUser)
+  } else {
+    return userArr
+  }
+}
 
+const newArr = (arr) => {
+  userArr = arr
+}
 onMounted(() => {
   getUser()
 })

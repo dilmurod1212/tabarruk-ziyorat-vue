@@ -12,7 +12,7 @@
       @blur="emit('on-blur')"
       @focus="emit('on-focus')"
       @focusout="emit('focus-out')"
-      @keyup="emit('focus-out')"
+      @keyup="emit('key-down')"
     />
     <!-- <slot name="suffix"></slot> -->
     <i
@@ -42,6 +42,7 @@ const emit = defineEmits<{
   (e: 'on-blur'): void
   (e: 'focus-out'): void
   (e: 'key-up'): void
+  (e: 'key-down'): void
 }>()
 
 const inputHandler = (event: any) => {

@@ -46,6 +46,7 @@
       @click="showItem(el.id, el.show)"
     />
   </div>
+  <CInstagram />
 </template>
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
@@ -57,7 +58,7 @@ import CCountryInfo from '@/components/CardInfo/CCountryInfo.vue'
 import CReligions from '@/components/Religions/CReligions.vue'
 import CNews from '@/components/News/CNews.vue'
 import CAccordion from '@/components/Accordion/CAccordion.vue'
-
+import CInstagram from '@/components/Instagram/CInstagram.vue'
 import news from '@/data/newsCard.js'
 import { Accordion } from '@/data/accordion.js'
 
