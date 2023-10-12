@@ -1,22 +1,6 @@
 <template>
-  <!-- <div class="py-24 fixed">
-    <main class="container">
-      <CInput type="text" placeholder="Enter keyword" v-model="input" :error="!input.length">
-        <template #suffix>
-          <span
-            v-if="input.length > 3"
-            @click="input = ''"
-            class="text-white text-lg px-4 hover:text-red-500 transition duration-200 ease-in-out cursor-pointer"
-          >
-            X
-          </span>
-        </template>
-      </CInput>
-      <pre class="text-lg text-white"> input: {{ input }} </pre>
-      <CSearch />
-    </main>
-  </div> -->
-  <Header />
+
+  <CHero />
   <!-- <CountrySlider /> -->
   <div class="mx-auto">
     <About />
@@ -61,6 +45,7 @@ import CAccordion from '@/components/Accordion/CAccordion.vue'
 import CInstagram from '@/components/Instagram/CInstagram.vue'
 import news from '@/data/newsCard.js'
 import { Accordion } from '@/data/accordion.js'
+import CHero from '@/components/Hero/CHero.vue'
 
 const input = ref('')
 const activeItem = ref(0 || null)

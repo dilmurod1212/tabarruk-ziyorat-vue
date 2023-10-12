@@ -59,7 +59,7 @@ const searchUser = () => {
     item.name.toLowerCase().includes(search.value.trim().toLowerCase())
   )
   if (filteredUser.length) {
-    newArr(filteredUser)
+    newArr(filteredUser) 
   } else {
     return userArr
   }
