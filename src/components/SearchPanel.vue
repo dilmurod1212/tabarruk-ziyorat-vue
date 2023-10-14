@@ -5,7 +5,7 @@
       :class="[state ? 'fas fa-search' : 'fas fa-close']"
       @click="state = !state"
     ></i>
-    <CSearch :class="{ hidden: state }" />
+    <CSearch v-if="!state" v-auto-animate />
   </div>
 </template>
 

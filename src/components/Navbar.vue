@@ -3,10 +3,10 @@
     <li class="hover:opacity-40 font-bold transition-all">
       <a href="#">About us</a>
     </li>
-    <li class="transition-all" @click="showCountries" @focusout="state = false">
+    <li @click="showCountries" @focusout="state = false">
       <a href="#" class="hover:opacity-40 font-bold">Countries</a>
       <ul
-        :class="[state ? 'block' : 'hidden']"
+        v-if="state"
         class="absolute top-[100%] left-0 right-auto grid grid-cols-2 gap-2 bg-white/20 border border-white/30 backdrop-blur-xl rounded-xl p-2"
       >
         <li
@@ -29,10 +29,11 @@
     >
       <a href="#" class="hover:opacity-40 font-bold">Religions</a>
       <ul
-        :class="[showReligion ? 'block' : 'hidden']"
+        v-show="showReligion"
         class="absolute top-[100%] left-auto right-auto gap-2 bg-white/20 border border-white/30 backdrop-blur-xl rounded-xl p-2"
       >
         <li
+          v-auto-animate
           v-for="(el, idx) in religions"
           :key="idx"
           class="p-2 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2 group cursor-pointer"

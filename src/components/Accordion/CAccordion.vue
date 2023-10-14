@@ -14,14 +14,11 @@
         ></i>
       </div>
     </div>
-    <Transition name="slide-fade">
-      <p
-        class="mt-5 pt-5 pl-0 font-light border-t border-t-white/20 transition-all"
-        :class="{ 'hidden opacity-0 transition-all': !show }"
-      >
+    <div v-auto-animate>
+      <p v-if="show" class="mt-5 pt-5 pl-0 font-light border-t border-t-white/20 transition-all">
         {{ descr }}
       </p>
-    </Transition>
+    </div>
   </div>
 </template>
 
@@ -38,5 +35,3 @@ interface Props {
 defineProps<Props>()
 </script>
 
-<style scoped>
-</style>

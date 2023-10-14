@@ -2,7 +2,7 @@
   <div class="container">
     <div class="flex items-center max-md:flex-col max-md:items-start gap-4 text-white py-8">
       <div class="flex flex-col flex-1">
-        <img src="/images/Logo.png" alt="" />
+        <CLogo />
         <p class="text-sm">
           This website is created to share information about historical, unique places located in
           Turkic states.
@@ -27,6 +27,8 @@
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import CLogo from './Logo/CLogo.vue'
+</script>
 
 <style scoped></style>

@@ -1,8 +1,8 @@
 <template>
   <div
-    tabindex="0"
-    @focusout="hideSearchBar"
-    class="absolute top-[-50%] right-10 w-[600px] max-lg:w-[400px] z-10 backdrop-blur-xl"
+  tabindex="0"
+  @focusout="hideSearchBar"
+  class="absolute top-[-50%] right-10 w-[600px] max-lg:w-[400px] z-10 backdrop-blur-xl"
     :class="searchClass"
   >
     <div>
@@ -59,7 +59,7 @@ const searchUser = () => {
     item.name.toLowerCase().includes(search.value.trim().toLowerCase())
   )
   if (filteredUser.length) {
-    newArr(filteredUser) 
+    newArr(filteredUser)
   } else {
     return userArr
   }

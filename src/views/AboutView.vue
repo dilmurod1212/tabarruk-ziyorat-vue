@@ -1,10 +1,13 @@
 <template>
   <div class="bg-blue-950 min-h-screen text-white">
-    <CFooter />
+    <input type="text" v-model="input" class="text-red-500" />
+    <index />
   </div>
 </template>
 <script setup lang="ts">
-import CFooter from '@/components/CFooter.vue'
-import { reactive, ref, watchEffect, onMounted } from 'vue'
+import { reactive, ref, watchEffect, onMounted, provide } from 'vue'
+import index from '@/components/index.vue'
+const input = ref('')
+provide('message', input)
 </script>
 <style></style>
