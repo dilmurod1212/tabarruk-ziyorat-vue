@@ -1,8 +1,8 @@
 <template>
   <div
-  tabindex="0"
-  @focusout="hideSearchBar"
-  class="absolute top-[-50%] right-10 w-[600px] max-lg:w-[400px] z-10 backdrop-blur-xl"
+    tabindex="0"
+    @focusout="hideSearchBar"
+    class="absolute top-[-50%] right-10 w-[550px] max-lg:w-[300px] z-10 backdrop-blur-xl"
     :class="searchClass"
   >
     <div>
@@ -15,7 +15,7 @@
         class="z-10"
       />
     </div>
-    <div v-if="show && search.length > 2">
+    <div>
       <ul class="rounded-lg border-1 border-white/20 bg-white/10 backdrop-blur-xl pl-4 mt-3">
         <li
           v-for="(user, idx) in userArr"

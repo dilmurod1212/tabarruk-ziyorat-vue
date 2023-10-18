@@ -1,16 +1,16 @@
 <template>
   <ul
-    :class="[state ? 'block' : 'hidden']"
-    class="absolute top-[100%] left-0 right-auto grid grid-cols-2 gap-2 bg-white/20 border border-white/30 backdrop-blur-xl rounded-xl p-2"
+    class="absolute top-[100%] right-auto gap-2 bg-white/20 border border-white/30 backdrop-blur-xl rounded-xl p-2"
+    :class="{ 'grid grid-cols-2 left-0': religion.length > 3 }"
   >
     <li
-      v-for="(el, idx) in dropdownCountries"
+      v-for="(el, idx) in religion"
       :key="idx"
       class="p-2 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2 group cursor-pointer"
     >
-      <img :src="el.flag" alt="" class="" />
+      <img :src="el.img" alt="" class="" />
       <div class="text-white">
-        <h3 class="text-base group-hover:text-red-500 transition-all">{{ el.country }}</h3>
+        <h3 class="text-base group-hover:text-red-500 transition-all">{{ el.title }}</h3>
         <p class="text-sm opacity-60">{{ el.destination }} destinations</p>
       </div>
     </li>
@@ -23,18 +23,19 @@ import { dropdownCountries } from '@/data/dropdownCountries.js'
 const state = ref(false)
 const showReligion = ref(false)
 
-const religions = reactive([
-  { img: '/images/religions/Islam (1).svg', religion: 'Islam', destination: '32' },
-  { img: '/images/religions/Islam.svg', religion: 'Christianity', destination: '24' },
-  { img: '/images/religions/Islam (2).svg', religion: 'Buddism', destination: '19' }
-])
-const navLinks = reactive([
-  { id: 1, content: 'About us' },
-  { id: 2, content: 'Countries' },
-  { id: 3, content: 'Religions' },
-  { id: 4, content: 'Heritage map' },
-  { id: 5, content: 'Help' }
-])
+interface Props {
+  item: {
+    flag?: string
+    icon?: string
+    countryDest?: number
+    religionDest?: number
+    country?: string
+    religion?: string
+  }
+}
+const props = defineProps(['religion'])
+console.log(props)
+
 const showCountries = () => {
   state.value = !state.value
   console.log('hover')

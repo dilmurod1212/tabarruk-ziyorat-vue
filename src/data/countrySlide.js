@@ -1,44 +1,38 @@
 export const countriess = [
   {
     id: 1,
-    image: './images/Image (1).png',
+    image: './images/slider/baku.png',
     country: 'Baku, Azerbaijan',
     oldCountry: 'Old City (Icherisheher)'
   },
   {
+    id: 2,
+    image: './images/slider/budapest.png',
+    country: 'Baku, Azerbaijan',
+    oldCountry: 'Buda Castle'
+  },
+  {
+    id: 3,
+    image: './images/slider/istanbul.png',
+    country: 'Baku, Azerbaijan',
+    oldCountry: 'Sultan Ahmed mosque'
+  },
+  {
     id: 1,
-    image: './images/Image (2).png',
+    image: './images/slider/baku.png',
     country: 'Baku, Azerbaijan',
     oldCountry: 'Old City (Icherisheher)'
   },
   {
-    id: 1,
-    image: './images/Image (3).png',
+    id: 2,
+    image: './images/slider/budapest.png',
     country: 'Baku, Azerbaijan',
-    oldCountry: 'Old City (Icherisheher)'
+    oldCountry: 'Buda Castle'
   },
   {
-    id: 1,
-    image: './images/Image (1).png',
+    id: 3,
+    image: './images/slider/istanbul.png',
     country: 'Baku, Azerbaijan',
-    oldCountry: 'Old City (Icherisheher)'
+    oldCountry: 'Sultan Ahmed mosque'
   },
-  {
-    id: 1,
-    image: './images/Image (3).png',
-    country: 'Baku, Azerbaijan',
-    oldCountry: 'Old City (Icherisheher)'
-  },
-  {
-    id: 1,
-    image: './images/Image (3).png',
-    country: 'Baku, Azerbaijan',
-    oldCountry: 'Old City (Icherisheher)'
-  },
-  {
-    id: 1,
-    image: './images/Image (3).png',
-    country: 'Baku, Azerbaijan',
-    oldCountry: 'Old City (Icherisheher)'
-  }
 ]

@@ -23,8 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import { Transition } from 'vue'
-// import { CollapseTransition } from '@ivanv/vue-collapse-transition'
 interface Props {
   id: number
   title: string

@@ -8,19 +8,19 @@
       :loop="true"
       :breakpoints="{
         '640': {
-          slidesPerView: 1.4,
+          slidesPerView: 2,
           spaceBetween: 20
         },
         '768': {
-          slidesPerView: 2.4,
+          slidesPerView: 2.2,
           spaceBetween: 20
         },
         '1024': {
-          slidesPerView: 3.2,
+          slidesPerView: 2.8,
           spaceBetween: 30
         },
         '1280': {
-          slidesPerView: 4,
+          slidesPerView: 3.5,
           spaceBetween: 30
         }
       }"
@@ -34,13 +34,9 @@
         :virtualIndex="idx"
       >
         <div
-          class="flex items-center gap-2 p-2 bg-[#191f53] bg-opacity-60 backdrop-blur-md rounded-md border-2 border-[#191f53] text-white"
+          class="flex items-center gap-2 p-2 bg-white/10 bg-opacity-60 backdrop-blur-md rounded-md border border-white/10 text-white"
         >
-          <img
-            src="/images/hungary.jpg"
-            alt="country"
-            class="rounded-md w-[100px] max-md:w-[80px]"
-          />
+          <img :src="el.image" alt="country" class="rounded-md" />
           <div class="flex flex-col gap-2">
             <p class="text-sm max-md:text-xs font-light opacity-70">{{ el.country }}</p>
             <h3 class="max-md:text-sm font-bold">{{ el.oldCountry }}</h3>

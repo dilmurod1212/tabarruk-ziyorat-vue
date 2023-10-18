@@ -19,7 +19,7 @@
   <CNews :news="news" />
   <div class="container grid grid-cols-2 max-md:grid-cols-1 gap-4 py-8">
     <CAccordion
-      v-for="(el, idx) in accordions"
+      v-for="(el, idx) in Accordion"
       :key="idx"
       :descr="el.descr"
       :icon="el.icon"
@@ -62,54 +62,5 @@ const countryInfo = reactive([
   { img: '/images/mosque/Mask group (1).svg', info: 'Countries', count: 7 },
   { img: '/images/mosque/Mask group (2).svg', info: 'Religions', count: 3 }
 ])
-const accordions = reactive([
-  {
-    id: 1,
-    show: false,
-    icon: '/images/accordion-icon/flag.svg',
-    title: 'What is the goal of this project? ',
-    descr:
-      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
-  },
-  {
-    id: 2,
-    show: false,
-    icon: '/images/accordion-icon/bolt.svg',
-    title: 'How many countries in Organization of Turkic states?',
-    descr:
-      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
-  },
-  {
-    id: 3,
-    show: false,
-    icon: '/images/accordion-icon/flag.svg',
-    title: 'What is the goal of this project? ',
-    descr:
-      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
-  },
-  {
-    id: 4,
-    show: false,
-    icon: '/images/accordion-icon/location-plus.svg',
-    title: 'How many countries in Organization of Turkic states?',
-    descr:
-      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
-  },
-  {
-    id: 5,
-    show: false,
-    icon: '/images/accordion-icon/flag.svg',
-    title: 'How many countries in Organization of Turkic states?',
-    descr:
-      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
-  },
-  {
-    id: 6,
-    show: false,
-    icon: '/images/accordion-icon/user-heart-alt.svg',
-    title: 'How many countries in Organization of Turkic states?',
-    descr:
-      'In Organization of Turkic states 7 countries: Uzbekistan, Kazakhstan, Kirgizstan, Turkey, Azerbaijan, Turkmenistan'
-  }
-])
+
 </script>

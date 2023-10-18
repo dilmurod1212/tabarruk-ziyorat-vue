@@ -11,14 +11,6 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type CInput from './Form/CInput.vue'
 import CSearch from './CSearch.vue'
-// interface Props {
-//   state: boolean
-// }
-// defineProps<Props>()
 const state = ref(true)
-const hidden = ref('hidden')
 </script>
-
-<style scoped></style>
