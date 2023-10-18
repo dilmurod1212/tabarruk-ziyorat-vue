@@ -1,9 +1,9 @@
 <template>
   <div>
     <Vue3Marquee :pause-on-hover="true">
-      <div class="flex gap-5">
+      <div class="flex gap-9 max-lg:gap-4 max-md:gap-3">
         <div
-          class="card p-4 bg-white/[0.04] border border-white/20 flex justify-center items-center rounded-xl w-[280px]"
+          class="card p-4 bg-white/[0.04] border border-white/20 flex justify-center items-center rounded-xl w-[280px] max-md:w-[200px]"
           v-for="avatar in avatarArray"
           :key="avatar"
         >
@@ -12,9 +12,9 @@
       </div>
     </Vue3Marquee>
     <Vue3Marquee :pause-on-hover="true" :direction="'reverse'">
-      <div class="flex gap-5 mt-4">
+      <div class="flex gap-9 max-lg:gap-4 max-md:gap-3 mt-4">
         <div
-          class="card p-4 bg-white/[0.04] border border-white/20 flex justify-center items-center rounded-xl w-[280px]"
+          class="card p-4 bg-white/[0.04] border border-white/20 flex justify-center items-center rounded-xl w-[280px] max-md:w-[200px]"
           v-for="avatar in logoArray"
           :key="avatar"
         >

@@ -14,14 +14,16 @@
         <a href="#"><i class="fa-brands fa-youtube"></i></a>
         <a href="#"><i class="fa-brands fa-instagram"></i></a>
       </div>
-      <div class="flex flex-col flex-1">
-        <router-link to="/">Main page</router-link>
-        <router-link to="/">Contact</router-link>
-        <router-link to="/">Privacy</router-link>
-      </div>
-      <div class="flex flex-col flex-1">
-        <router-link to="/">Media resources</router-link>
-        <router-link to="/">F.A.Q</router-link>
+      <div class="flex justify-between flex-grow max-md:w-full">
+        <div class="flex flex-col flex-1">
+          <router-link to="/">Main page</router-link>
+          <router-link to="/">Contact</router-link>
+          <router-link to="/">Privacy</router-link>
+        </div>
+        <div class="flex flex-col flex-1">
+          <router-link to="/">Media resources</router-link>
+          <router-link to="/">F.A.Q</router-link>
+        </div>
       </div>
     </div>
   </div>

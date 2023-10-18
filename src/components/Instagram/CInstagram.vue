@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="">
     <CTitle
       title="Instagram"
       descr="Stay up-to-date on the latest news and developments in the Turkic world."
