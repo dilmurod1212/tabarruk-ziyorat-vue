@@ -1,7 +1,7 @@
 <template>
   <ul class="flex gap-4 text-white max-lg:hidden relative">
     <li class="hover:opacity-40 font-bold transition-all">
-      <a href="#">About us</a>
+      <router-link to="/about">About us</router-link>
     </li>
     <li @click="showCountries" @focusout="state = false">
       <a href="#" class="hover:opacity-40 font-bold">Countries</a>
@@ -31,7 +31,6 @@ const showReligion = ref(false)
 
 import { dropdownCountries, religions } from '@/data/dropdownCountries.js'
 import CDropdown from './CDropdown.vue'
-import LanguageSwitcher from './LanguageSwitcher.vue'
 
 const navLinks = reactive([
   { id: 1, content: 'About us' },

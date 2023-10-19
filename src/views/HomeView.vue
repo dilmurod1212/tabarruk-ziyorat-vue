@@ -1,5 +1,6 @@
 <template>
   <CHero />
+  <img src="/images/vectors/Vector (6).svg" alt="" class="absolute left-0 top-2/4 z-0" />
   <CountrySlider />
   <div class="mx-auto">
     <About />
@@ -26,14 +27,13 @@
       :id="el.id"
       :show="activeItem === el.id"
       :title="el.title"
-      @click="showItem(el.id, el.show)"
+      @click="showItem(el.id)"
     />
   </div>
   <CInstagram />
 </template>
 <script setup lang="ts">
 import { ref, reactive, onMounted } from 'vue'
-import Header from '@/components/Header.vue'
 import About from '@/components/About/About.vue'
 import CountrySlider from '@/components/CountrySlider.vue'
 import CCountries from '@/components/Countries/CCountries.vue'
@@ -49,7 +49,7 @@ import CHero from '@/components/Hero/CHero.vue'
 const input = ref('')
 const activeItem = ref(0 || null)
 
-const showItem = (id, show) => {
+const showItem = (id) => {
   if (activeItem.value == id) {
     activeItem.value = null
   } else {
@@ -62,5 +62,4 @@ const countryInfo = reactive([
   { img: '/images/mosque/Mask group (1).svg', info: 'Countries', count: 7 },
   { img: '/images/mosque/Mask group (2).svg', info: 'Religions', count: 3 }
 ])
-
 </script>

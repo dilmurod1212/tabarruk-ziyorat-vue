@@ -1,10 +1,10 @@
 <template>
-  <div class="container">
-    <div class="title">
+  <div class="container z-20">
+    <div class="title ">
       <h2 class="text-white font-playfair text-4xl my-4">About us</h2>
     </div>
     <div class="flex gap-4 items-center max-lg:flex-col max-md:items-start py-2">
-      <div class="text-white w-4/5 max-lg:w-full">
+      <div class="text-white w-4/5 max-lg:w-full z-20">
         <p class="max-md:w-full">
           Explore the valuable, historical, and heritage places of Turkic countries through our
           curated selection of articles, photos, and videos. Discover the beauty of ancient ruins,

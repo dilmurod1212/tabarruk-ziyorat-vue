@@ -19,10 +19,7 @@
 
 <script setup lang="ts">
 import { ref, reactive } from 'vue'
-import { dropdownCountries } from '@/data/dropdownCountries.js'
 const state = ref(false)
-const showReligion = ref(false)
-
 interface Props {
   item: {
     flag?: string

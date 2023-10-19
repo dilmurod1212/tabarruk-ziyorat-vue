@@ -1,5 +1,5 @@
 <template>
-  <div class="my-4">
+  <div class="relative top-1/2 -translate-y-2/4 z-20">
     <swiper
       :slidesPerView="1.2"
       :autoplay="{ delay: 1500, disableOnInteraction: false }"
