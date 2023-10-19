@@ -1,6 +1,6 @@
 <template>
   <CHero />
-  <img src="/images/vectors/Vector (6).svg" alt="" class="absolute left-0 top-2/4 z-0" />
+  <img src="/images/vectors/Vector(6).svg" alt="" class="absolute left-0 top-2/4 z-0" />
   <CountrySlider />
   <div class="mx-auto">
     <About />

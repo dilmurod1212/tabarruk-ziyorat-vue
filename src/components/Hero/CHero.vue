@@ -2,7 +2,7 @@
   <div
     class="hero relative top-0 left-0 h-[100vh] z-10 max-md:h-auto flex items-center overflow-hidden"
   >
-    <img src="/images/vectors/Vector (7).svg" alt="" class="absolute top-[15%] left-0 w-1/2" />
+    <img src="/images/vectors/Vector(7).svg" alt="" class="absolute top-[15%] left-0 w-1/2" />
     <div
       class="container text-center h-[75vh] flex flex-col items-center justify-center text-white mt-8"
     >
