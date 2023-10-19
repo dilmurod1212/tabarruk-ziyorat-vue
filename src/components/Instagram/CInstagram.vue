@@ -1,8 +1,8 @@
 <template>
   <div class="">
     <CTitle
-      title="Instagram"
-      descr="Stay up-to-date on the latest news and developments in the Turkic world."
+      title="Partners"
+      descr="This website is created to share information about historical, unique places located in Turkic countries. "
     />
     <div>
       <SocialItem />
