@@ -1,40 +1,35 @@
 <template>
   <div class="container">
+    <CTitle title="Statements" descr="All countries that we represent" />
     <swiper
-      :slidesPerView="1"
+      :slidesPerView="1.2"
       :centeredSlides="true"
       :grabCursor="true"
-      :spaceBetween="30"
+      :spaceBetween="40"
       :loop="true"
       :pagination="{
         clickable: true
       }"
       :breakpoints="{
-        '640': {
-          slidesPerView: 1,
-          spaceBetween: 20
-        },
         '768': {
           slidesPerView: 2,
-          spaceBetween: 20
+          spaceBetween: 30
         },
         '1024': {
           slidesPerView: 3,
-          spaceBetween: 30
-        },
-        '1280': {
-          slidesPerView: 3,
-          spaceBetween: 30
+          spaceBetween: 40
         }
       }"
       :navigation="true"
       :modules="modules"
-      class="mySwiper overflow-auto"
+      class="mySwiper py-10"
     >
-      <swiper-slide v-for="(el, idx) in info" :key="idx">
+      <swiper-slide v-for="(el, idx) in info" :key="idx" v-slot="{ isActive }">
         <div
           class="relative flex flex-col justify-center items-center text-center bg-white/20 border border-white/20 rounded-2xl"
+          :class="{ 'scale-110': isActive }"
         >
+          <h1>{{ isActive }}</h1>
           <img :src="el.img" alt="" class="" />
           <div class="p-4 mb-4 text-white">
             <h3 class="text-[#E54545]">{{ el.name }}</h3>
@@ -64,6 +59,7 @@ import 'swiper/css/pagination'
 
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
+import  CTitle from '../CTitle.vue'
 
 const modules = reactive([EffectCoverflow, Pagination, Navigation])
 const info = reactive([
@@ -97,4 +93,8 @@ const info = reactive([
   }
 ])
 </script>
-<style></style>
+<style>
+.mySwiper {
+  padding: 50px 0;
+}
+</style>

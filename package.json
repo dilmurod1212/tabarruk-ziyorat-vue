@@ -15,6 +15,8 @@
   "dependencies": {
     "@formkit/auto-animate": "^0.8.0",
     "@ivanv/vue-collapse-transition": "^1.0.2",
+    "flowbite": "^1.8.1",
+    "flowbite-vue": "^0.0.17",
     "pinia": "^2.1.6",
     "swiper": "^10.3.0",
     "vue": "^3.3.4",

@@ -37,6 +37,5 @@ import Button from '../Form/Button.vue'
     ),
     url('/images/Image.png');
   background-position: center;
-  background-color: red;
 }
 </style>
