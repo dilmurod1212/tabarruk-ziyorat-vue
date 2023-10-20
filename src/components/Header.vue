@@ -9,9 +9,9 @@
           <Navbar />
           <LanguageSwitcher />
           <SearchPanel />
-          <div>
+          <router-link to="/about">
             <i class="fas fa-bars text-white open hidden max-lg:block text-2xl"></i>
-          </div>
+          </router-link>
         </div>
       </div>
     </div>
