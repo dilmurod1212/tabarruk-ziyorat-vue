@@ -1,5 +1,27 @@
 <template>
   <div>
+    <div class="w-full images flex gap-1 overflow-hidden">
+      <div class="h-80 bg-red-400 w-full skew-first overflow-hidden">
+        <img src="/images/turcey.jpg" alt="" class="skew-x-12 h-full w-[100%] object-cover" />
+      </div>
+      <div class="h-80 bg-yellow-400 w-full -skew-x-12 overflow-hidden relative">
+        <img
+          src="/images/turcey.jpg"
+          alt=""
+          class="skew-x-12 w-[150%] absolute bottom-0 top-0 h-full object-cover"
+        />
+      </div>
+      <div
+        id="myelement"
+        class="h-80 bg-green-400 w-full -skew-x-12 bg-[url('/images/bukhara.jpeg')] bg-center bg-no-repeat bg-cover"
+      ></div>
+      <div
+        class="h-80 bg-blue-400 w-full -skew-x-12 bg-[url('/images/hungary.jpg')] bg-center bg-no-repeat bg-cover"
+      ></div>
+      <div
+        class="h-80 bg-white w-full -skew-x-12 bg-[url('/images/Image.png')] bg-center bg-no-repeat bg-cover"
+      ></div>
+    </div>
     <div class="text-white relative pt-[120px]">
       <div class="container">
         <h2 class="font-playfair text-4xl">About us</h2>
@@ -61,122 +83,71 @@
     <div class="mt-[20px]">
       <CPresidentCards />
     </div>
-    <!-- start video player -->
 
-    <div
-      class="video-player min-h-[500px] max-lg:min-h-[400px] max-md:min-h-[300px] flex justify-center items-center flex-col relative"
-    >
-      <div class="container">
-        <h2
-          class="font-playfair text-4xl max-md:text-2xl text-center text-white absolute left-2/4 -translate-x-[50%] top-10"
-        >
-          Promo Video about Tabarruk ziyorat
-        </h2>
-      </div>
-      <div
-        @click="showModal"
-        class="text-white group cursor-pointer w-[100px] h-[100px] max-md:h-[60px] max-md:w-[60px] bg-red-600 flex justify-center items-center rounded-full"
-      >
-        <i class="fas fa-play group-hover:scale-110 transition-all text-4xl max-md:text-2xl"></i>
-      </div>
-    </div>
-    <div>
-      <Modal size="5xl" v-if="isShowModal" @close="closeModal" color="green" class="">
-        <template #header>
-          <div class="flex items-center text-lg">
-            <h2 class="max-md:text-sm max-lg:text-base text-xl">
-              Turkiy mamlakatlarning qimmatli, tarixiy va merosi joylarini o'rganing
-            </h2>
-          </div>
-        </template>
-        <template #body>
-          <div class="min-h-[250px] h-full">
-            <iframe
-              width="100%"
-              height="250px"
-              data-v-fdb8a45c=""
-              src="https://www.youtube.com/embed/jpo0fX1IQSw"
-              title="YouTube video player"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            ></iframe>
-          </div>
-        </template>
-      </Modal>
-    </div>
-    <!-- end video player -->
-    <!-- start contact section -->
-    <div class="container">
-      <div class="flex justify-between max-md:flex-col items-center max-md:items-start">
-        <div class="text-white flex flex-col gap-4 py-6">
-          <h2 class="text-4xl font-playfair">Contacts</h2>
-          <div>
-            <p class="max-md:text-sm text-white/60 font-light mb-1">
-              <i class="fas fa-voicemail"></i>Email address
-            </p>
-            <h4 class="text-xl font-bold">tabarruk.ziyorat@info.uz</h4>
-          </div>
-          <div>
-            <p class="max-md:text-sm text-white/60 font-light mb-1">
-              <i class="fas fa-voicemail"></i>Email address
-            </p>
-            <h4 class="text-xl font-bold">tabarruk.ziyorat@info.uz</h4>
-          </div>
-          <div>
-            <p class="max-md:text-sm text-white/60 font-light mb-1">
-              <i class="fas fa-voicemail"></i>Email address
-            </p>
-            <h4 class="text-xl font-bold">tabarruk.ziyorat@info.uz</h4>
-          </div>
-        </div>
-        <div class="h-[250px] w-[600px] max-lg:w-[400px] max-md:w-full">
-          <iframe
-            class="h-full w-full"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2702.108618813058!2d69.31345292164745!3d41.32000820980603!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef58d8193b3cd%3A0xd6d0b321d0ea5cd8!2sMehmonxona!5e0!3m2!1suz!2s!4v1697805473555!5m2!1suz!2s"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </div>
-      </div>
-    </div>
+    <CModalVideo :url="changeLink()" />
+    <CContact :contactInfo="contactInfo" />
   </div>
 </template>
 <script setup lang="ts">
+import CContact from '@/components/CContact.vue'
+import CModalVideo from '@/components/CModalVideo.vue'
 import CTitle from '@/components/CTitle.vue'
 import CCountryInfo from '@/components/CardInfo/CCountryInfo.vue'
 import CPresidentCards from '@/components/Cards/CPresidentCards.vue'
 import { countryInfo } from '@/data/countryInfo.js'
 
-import { Modal } from 'flowbite-vue'
-import { ref } from 'vue'
+import { ref, reactive } from 'vue'
+const url = ref('https://www.youtube.com/embed/_fSoa491Mdw?si=nPpLnDaSGk-7p8yM')
 
-const isShowModal = ref(false)
-function closeModal() {
-  isShowModal.value = false
-  document.body.style.overflowY = 'scroll'
+// https://www.youtube.com/embed/2vK0fnOs8OA?si=nag4OnVOJMgAgVpO
+// https://youtu.be/2vK0fnOs8OA?si=nag4OnVOJMgAgVpO
+
+const changeLink = () => {
+  if (url?.value.includes('be/')) {
+    const newUrl = url.value.split('youtu.be/')
+
+    return (url.value = 'https://www.youtube.com/embed/' + newUrl[1])
+  } else {
+    return url.value
+  }
 }
-function showModal() {
-  isShowModal.value = true
-  document.body.style.overflowY = 'hidden'
-}
+
+const contactInfo = reactive([
+  {
+    icon: 'fas fa-location-dot',
+    iconName: 'Loaction',
+    title: '107 B Amir Temur avenue, Tashkent, Uzbeksitan'
+  },
+  {
+    icon: 'fas fa-envelope',
+    iconName: 'Email address',
+    title: 'tabarruk.ziyorat@info.uz'
+  },
+  {
+    icon: 'fas fa-phone',
+    iconName: 'Phone number',
+    title: '+998 71 200 7007'
+  }
+])
 </script>
 <style>
-.video-player {
-  background: linear-gradient(
-      180deg,
-      #07091c -4.12%,
-      rgba(7, 9, 28, 0.6) 49.39%,
-      rgba(7, 9, 28, 0.2) 85.78%,
-      #07091c 100%
-    ),
-    url('/images/Image.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.skew-first {
+  transform: skewX(-12deg);
 }
-.modal {
-  background-color: green;
+
+#myelement {
+  position: relative;
+  overflow: hidden;
+}
+#myelement::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  top: -50%;
+  left: -50%;
+  z-index: -1;
+  background: url(background.png) 0 0 repeat;
+  transform: rotate(30deg);
 }
 </style>

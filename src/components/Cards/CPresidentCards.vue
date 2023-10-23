@@ -24,14 +24,17 @@
       :modules="modules"
       class="mySwiper py-10"
     >
-      <swiper-slide v-for="(el, idx) in info" :key="idx" v-slot="{ isActive }">
+      <swiper-slide v-for="(el, idx) in info" :key="idx" v-slot="{ isActive }" class="py-12">
         <div
           class="relative flex flex-col justify-center items-center text-center bg-white/20 border border-white/20 rounded-2xl"
           :class="{ 'scale-110': isActive }"
         >
-          <h1>{{ isActive }}</h1>
-          <img :src="el.img" alt="" class="" />
-          <div class="p-4 mb-4 text-white">
+          <img
+            :src="el.img"
+            alt=""
+            class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2"
+          />
+          <div class="p-4 my-4 mt-16 text-white">
             <h3 class="text-[#E54545]">{{ el.name }}</h3>
             <h3 class="opacity-80 font-light text-sm">{{ el.title }}</h3>
             <p class="font-bold text-sm mt-4">​​{{ el.descr }}</p>
@@ -59,7 +62,7 @@ import 'swiper/css/pagination'
 
 // import required modules
 import { EffectCoverflow, Pagination, Navigation } from 'swiper/modules'
-import  CTitle from '../CTitle.vue'
+import CTitle from '../CTitle.vue'
 
 const modules = reactive([EffectCoverflow, Pagination, Navigation])
 const info = reactive([
