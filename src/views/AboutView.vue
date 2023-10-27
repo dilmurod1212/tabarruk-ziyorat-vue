@@ -1,6 +1,76 @@
 <template>
   <div>
-    <div class="w-full images flex gap-1 overflow-hidden">
+    <div
+      class="relative overflow-hidden w-full h-[200px] lg:h-[550px]"
+      loading="false"
+      data-v-fdb8a45c=""
+    >
+      <div class="w-full h-full flex -y-center relative">
+        <div
+          class="w-full h-full border-r border-solid border-black -skew-x-[16deg] relative overflow-hidden z-[1]"
+        >
+          <img
+            class="w-full h-full absolute skew-x-[16deg] object-cover scale-[2] lg:scale-[1.8] xl:scale-[1.6] opacity-0"
+            alt="banner-image"
+            lazy="loaded"
+            src="https://admin.tabarrukziyorat.com.uz/media/about_images/Xiva_shahri.jpg"
+          />
+        </div>
+        <div
+          class="w-full h-full border-r border-solid border-black -skew-x-[16deg] relative overflow-hidden z-[1]"
+        >
+          <img
+            class="w-full h-full absolute skew-x-[16deg] object-cover scale-[2] lg:scale-[1.8] xl:scale-[1.6]"
+            alt="banner-image"
+            lazy="loaded"
+            src="/images/turcey.jpg"
+          />
+        </div>
+        <div
+          class="w-full h-full border-r border-solid border-black -skew-x-[16deg] relative overflow-hidden z-[1]"
+        >
+          <img
+            class="w-full h-full absolute skew-x-[16deg] object-cover scale-[2] lg:scale-[1.8] xl:scale-[1.6]"
+            alt="banner-image"
+            lazy="loaded"
+            src="/images/baku.jpeg"
+          />
+        </div>
+        <div
+          class="w-full h-full border-r border-solid border-black -skew-x-[16deg] relative overflow-hidden z-[1]"
+        >
+          <img
+            class="w-full h-full absolute skew-x-[16deg] object-cover scale-[2] lg:scale-[1.8] xl:scale-[1.6]"
+            alt="banner-image"
+            lazy="loaded"
+            src="https://admin.tabarrukziyorat.com.uz/media/about/registan.webp"
+          />
+        </div>
+        <div
+          class="w-full h-full border-r border-solid border-black -skew-x-[16deg] relative overflow-hidden z-[1] border-r-[0px]"
+        >
+          <img
+            class="w-full h-full absolute skew-x-[16deg] object-cover scale-[2] lg:scale-[1.8] xl:scale-[1.6] opacity-0"
+            alt="banner-image"
+            lazy="loaded"
+            src="https://admin.tabarrukziyorat.com.uz/media/about_images/azerbaijan.jpg"
+          />
+        </div>
+        <img
+          class="w-full h-full absolute left-0 max-w-[30%] object-cover"
+          alt="banner-image"
+          lazy="loaded"
+          src="https://admin.tabarrukziyorat.com.uz/media/about_images/Xiva_shahri.jpg"
+        /><img
+          class="w-full h-full absolute right-0 max-w-[30%] object-cover"
+          alt="banner-image"
+          lazy="loaded"
+          src="https://admin.tabarrukziyorat.com.uz/media/about_images/azerbaijan.jpg"
+        />
+        <div class="w-full h-full absolute inset-0 bg-dark/20 z-[2]"></div>
+      </div>
+    </div>
+    <!-- <div class="w-full images flex gap-1 overflow-hidden">
       <div class="h-80 bg-red-400 w-full skew-first overflow-hidden">
         <img src="/images/turcey.jpg" alt="" class="skew-x-12 h-full w-[100%] object-cover" />
       </div>
@@ -21,7 +91,7 @@
       <div
         class="h-80 bg-white w-full -skew-x-12 bg-[url('/images/Image.png')] bg-center bg-no-repeat bg-cover"
       ></div>
-    </div>
+    </div> -->
     <div class="text-white relative pt-[120px]">
       <div class="container">
         <h2 class="font-playfair text-4xl">About us</h2>

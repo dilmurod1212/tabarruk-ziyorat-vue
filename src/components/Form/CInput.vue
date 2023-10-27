@@ -5,7 +5,7 @@
   >
     <slot name="prefix"></slot>
     <input
-      class="py-3 px-4 outline-none focus:outline-none placeholder:text-white/20 text-white bg-transparent w-full"
+      class="px-4 outline-none focus:outline-none placeholder:text-white/20 text-white bg-transparent w-full ring-0 focus:ring-0 active:ring-0 focus:border-none border-none"
       v-bind="{ type, placeholder, minLength, maxLength, id }"
       :value="modelValue"
       @input="inputHandler"

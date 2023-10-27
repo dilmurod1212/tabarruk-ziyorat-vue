@@ -1,31 +1,26 @@
 <template>
   <div
-    tabindex="0"
     @focusout="hideSearchBar"
-    class="absolute top-[-50%] right-10 w-[550px] max-lg:w-[300px] z-10 backdrop-blur-xl"
+    class="absolute top-[-50%] overflow-hidden rounded-lg right-10 w-[550px] max-lg:w-[300px] h-auto z-10 backdrop-blur-xl"
     :class="searchClass"
   >
-    <div>
-      <CInput
-        type="text"
-        placeholder="Enter a key word"
-        v-model="search"
-        @on-focus="show = true"
-        @input="searchUser"
-        class="z-10"
-      />
-    </div>
-    <div>
-      <ul class="rounded-lg border-1 border-white/20 bg-white/10 backdrop-blur-xl pl-4 mt-3">
-        <li
-          v-for="(user, idx) in userArr"
-          :key="idx"
-          class="p-4 pl-0 border-b border-b-white/[0.08] last:border-none cursor-pointer hover:opacity-75"
-        >
-          <p class="text-white">{{ userArr.length ? user.name : 'topilmadi' }}</p>
-        </li>
-      </ul>
-    </div>
+    <CInput
+      type="text"
+      placeholder="Enter a key word"
+      v-model="search"
+      @on-focus="show = true"
+      @input="searchUser"
+      class="z-10 h-full"
+    />
+    <ul class="rounded-lg border-1 border-white/20 bg-white/10 backdrop-blur-xl pl-4 mt-4">
+      <li
+        v-for="(user, idx) in userArr"
+        :key="idx"
+        class="p-4 pl-0 border-b border-b-white/[0.08] last:border-none cursor-pointer hover:opacity-75"
+      >
+        <p class="text-white">{{ userArr.length ? user.name : 'topilmadi' }}</p>
+      </li>
+    </ul>
   </div>
 </template>
 <script setup lang="ts">
