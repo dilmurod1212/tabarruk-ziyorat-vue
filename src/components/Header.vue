@@ -1,5 +1,5 @@
 <template>
-  <header class="absolute top-0 left-0 w-full z-30">
+  <header class="absolute top-0 left-0 w-full z-[60]" :class="{ ' z-30': resNavbar }">
     <div class="container">
       <div class="flex justify-between items-center">
         <div class="logo max-md:w-4/5">
@@ -9,13 +9,30 @@
           <Navbar />
           <LanguageSwitcher />
           <SearchPanel />
-          <router-link to="/about">
-            <i class="fas fa-bars text-white open hidden max-lg:block text-2xl"></i>
+          <router-link to="/">
+            <i
+              v-if="!resNavbar"
+              class="fas fa-bars text-white open hidden max-lg:block text-2xl"
+              @click="showResNavbar"
+            ></i>
+            <i v-else @click="showResNavbar" class="fas fa-close text-white text-2xl z-40"></i>
           </router-link>
         </div>
       </div>
     </div>
   </header>
+  <div
+    v-show="resNavbar"
+    class="z-50 fixed left-0 top-0 h-full w-full bg-[#07091C] py-4 pt-[100px] lg:hidden"
+  >
+    <div class="container">
+      <CInput type="text" placeholder="Search" v-model="search" />
+      <div class="">
+        <Navbar navClass="max-md:flex flex-col mt-8 gap-4" />
+      </div>
+      <LanguageSwitcher lanClass="md:block max-md:block mt-4" />
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -23,6 +40,18 @@ import LanguageSwitcher from './LanguageSwitcher.vue'
 import Navbar from './Navbar.vue'
 import SearchPanel from './SearchPanel.vue'
 import CLogo from './Logo/CLogo.vue'
+import { ref } from 'vue'
+import CInput from './Form/CInput.vue'
+const resNavbar = ref(false)
+const search = ref('')
+const showResNavbar = () => {
+  resNavbar.value = !resNavbar.value
+  if (resNavbar.value) {
+    document.body.style.overflowY = 'hidden'
+  } else {
+    document.body.style.overflowY = 'scroll'
+  }
+}
 </script>
 <style>
 header {

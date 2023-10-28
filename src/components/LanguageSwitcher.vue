@@ -1,6 +1,7 @@
 <template>
   <div
-    class="language-switcher max-md:hidden top-0 left-0"
+    class="language-switcher hidden lg:block top-0 left-0"
+    :class="lanClass"
     @click="showLanguage"
     @focusout="state = false"
   >
@@ -14,11 +15,11 @@ import { ref } from 'vue'
 import CDropdown from './CDropdown.vue'
 import { dropdownCountries, religions } from '@/data/dropdownCountries.js'
 
+defineProps({ lanClass: String })
 const state = ref(false)
 
 const showLanguage = () => {
   state.value = !state.value
-  console.log('logger')
 }
 </script>
 

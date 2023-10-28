@@ -65,8 +65,4 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 
 // const country = Countries
 const modules = reactive([Autoplay, Pagination, Navigation])
-
-onMounted(() => {
-  console.log(countriess)
-})
 </script>

@@ -1,9 +1,9 @@
 <template>
-  <ul class="flex gap-4 text-white max-lg:hidden relative">
+  <ul class="flex gap-4 text-white max-lg:hidden relative" :class="navClass">
     <li class="hover:opacity-40 font-bold transition-all">
       <router-link to="/about">About us</router-link>
     </li>
-    <li @click="showCountries" @focusout="state = false">
+    <li @click="showCountries()" @focusout="state = false">
       <a href="#" class="hover:opacity-40 font-bold">Countries</a>
       <CDropdown v-if="state" :religion="dropdownCountries" />
     </li>
@@ -31,7 +31,7 @@ const showReligion = ref(false)
 
 import { dropdownCountries, religions } from '@/data/dropdownCountries.js'
 import CDropdown from './CDropdown.vue'
-
+defineProps({ navClass: String })
 const navLinks = reactive([
   { id: 1, content: 'About us' },
   { id: 2, content: 'Countries' },
