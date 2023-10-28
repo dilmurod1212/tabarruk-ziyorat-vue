@@ -10,29 +10,33 @@
           <LanguageSwitcher />
           <SearchPanel />
           <router-link to="/">
-            <i
-              v-if="!resNavbar"
-              class="fas fa-bars text-white open hidden max-lg:block text-2xl"
-              @click="showResNavbar"
-            ></i>
-            <i v-else @click="showResNavbar" class="fas fa-close text-white text-2xl z-40"></i>
+            <transition name="slide-fade" duration="100" mode="out-in">
+              <i
+                v-if="!resNavbar"
+                class="fas fa-bars text-white open hidden max-lg:block text-2xl"
+                @click="showResNavbar"
+              ></i>
+              <i v-else @click="showResNavbar" class="fas fa-close text-white text-2xl z-40"></i>
+            </transition>
           </router-link>
         </div>
       </div>
     </div>
   </header>
-  <div
-    v-show="resNavbar"
-    class="z-50 fixed left-0 top-0 h-full w-full bg-[#07091C] py-4 pt-[100px] lg:hidden"
-  >
-    <div class="container">
-      <CInput type="text" placeholder="Search" v-model="search" />
-      <div class="">
-        <Navbar navClass="max-md:flex flex-col mt-8 gap-4" />
+  <transition name="fade">
+    <div
+      v-show="resNavbar"
+      class="z-50 fixed left-0 top-0 h-full w-full bg-[#07091C] py-4 pt-[100px] lg:hidden"
+    >
+      <div class="container">
+        <CInput type="text" placeholder="Search" v-model="search" />
+        <div class="">
+          <Navbar navClass="max-md:flex flex-col mt-8 gap-4" />
+        </div>
+        <LanguageSwitcher lanClass="md:block max-md:block mt-4" />
       </div>
-      <LanguageSwitcher lanClass="md:block max-md:block mt-4" />
     </div>
-  </div>
+  </transition>
 </template>
 
 <script setup lang="ts">
@@ -56,5 +60,28 @@ const showResNavbar = () => {
 <style>
 header {
   background: linear-gradient(180deg, #07091c -61.25%, rgba(7, 9, 28, 0) 100%);
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+.slide-fade-enter-active {
+  transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 0.8s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to {
+  transform: translateX(20px);
+  opacity: 0;
 }
 </style>

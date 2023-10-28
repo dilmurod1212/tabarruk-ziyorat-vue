@@ -1,6 +1,6 @@
 <template>
   <ul class="flex gap-4 text-white max-lg:hidden relative" :class="navClass">
-    <li class="hover:opacity-40 font-bold transition-all">
+    <li class="hover:opacity -40 font-bold transition-all">
       <router-link to="/about">About us</router-link>
     </li>
     <li @click="showCountries()" @focusout="state = false">
