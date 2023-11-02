@@ -5,20 +5,22 @@
         <div class="logo max-md:w-4/5">
           <CLogo />
         </div>
-        <div class="flex items-center gap-8">
+        <div class="flex items-center gap-8 relative">
           <Navbar />
-          <LanguageSwitcher />
+          <LanguageSwitcher lan-class="" data="" />
           <SearchPanel />
-          <router-link to="/">
-            <transition name="slide-fade" duration="100" mode="out-in">
-              <i
-                v-if="!resNavbar"
-                class="fas fa-bars text-white open hidden max-lg:block text-2xl"
-                @click="showResNavbar"
-              ></i>
-              <i v-else @click="showResNavbar" class="fas fa-close text-white text-2xl z-40"></i>
-            </transition>
-          </router-link>
+          <div>
+            <i
+              v-if="!resNavbar"
+              class="fas fa-bars text-white open hidden max-lg:block z-[80] text-2xl cursor-pointer"
+              @click="showResNavbar"
+            ></i>
+            <i
+              v-else
+              @click="showResNavbar"
+              class="fas fa-close text-white text-2xl z-[80] cursor-pointer"
+            ></i>
+          </div>
         </div>
       </div>
     </div>
@@ -33,7 +35,7 @@
         <div class="">
           <Navbar navClass="max-md:flex flex-col mt-8 gap-4" />
         </div>
-        <LanguageSwitcher lanClass="md:block max-md:block mt-4" />
+        <LanguageSwitcher lanClass="md:block max-md:block mt-4" :data="languageSwitcherData"/>
       </div>
     </div>
   </transition>
@@ -43,11 +45,13 @@
 import LanguageSwitcher from './LanguageSwitcher.vue'
 import Navbar from './Navbar.vue'
 import SearchPanel from './SearchPanel.vue'
+import { languageSwitcherData } from '@/data/dropdown.js'
 import CLogo from './Logo/CLogo.vue'
 import { ref } from 'vue'
 import CInput from './Form/CInput.vue'
 const resNavbar = ref(false)
 const search = ref('')
+
 const showResNavbar = () => {
   resNavbar.value = !resNavbar.value
   if (resNavbar.value) {

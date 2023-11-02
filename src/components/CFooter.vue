@@ -28,9 +28,6 @@
         </div>
       </div>
     </div>
-    <div class="flex justify-center text-white p-6 bg-black/40">
-      <a href="https://t.me/dilmurod1212" target="_blank">saytni men tayyorladim</a>
-    </div>
   </footer>
 </template>
 

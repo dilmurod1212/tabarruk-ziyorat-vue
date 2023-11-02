@@ -9,61 +9,65 @@
       placeholder="Enter a key word"
       v-model="search"
       @on-focus="show = true"
-      @input="searchUser"
       class="z-10 h-full"
     />
-    <ul class="rounded-lg border-1 border-white/20 bg-white/10 backdrop-blur-xl pl-4 mt-4">
+    <ul
+      v-show="search.length"
+      class="rounded-lg border-1 border-white/20 bg-white/10 backdrop-blur-xl pl-4 mt-4"
+    >
       <li
-        v-for="(user, idx) in userArr"
+        v-show="onSearch(userArr, search).length"
+        v-for="(user, idx) in onSearch(userArr, search)"
         :key="idx"
-        class="p-4 pl-0 border-b border-b-white/[0.08] last:border-none cursor-pointer hover:opacity-75"
+        class="p-4 pl-0 text-white border-b border-b-white/[0.08] last:border-none cursor-pointer hover:opacity-75"
       >
-        <p class="text-white">{{ userArr.length ? user.name : 'topilmadi' }}</p>
+        <Highlighter
+          class="my-highlight"
+          :style="{ color: 'inherit' }"
+          highlightClassName="highlight"
+          :searchWords="keyword"
+          :autoEscape="false"
+          :textToHighlight="user.name"
+        />
+      </li>
+      <li v-show="!onSearch(userArr, search).length" class="text-center text-white p-4">
+        malumot topilmadi
       </li>
     </ul>
   </div>
 </template>
 <script setup lang="ts">
-import { useCounterStore } from '@/stores/counter'
 import CInput from './Form/CInput.vue'
-// import { countries } from '@/constants/countrySlide.js'
-import { ref, reactive, onMounted } from 'vue'
-interface Props {
-  searchClass: string
-}
-defineProps<Props>()
+import { ref, reactive, onMounted, computed } from 'vue'
+import Highlighter from 'vue-highlight-words'
 
-const store = useCounterStore()
+defineProps({ searchClass: String })
+
 const search = ref('')
-const text = ref('hello text')
 const show = ref(false)
 let userArr = reactive([])
 let newUserArr = reactive([])
 
 const hideSearchBar = () => {
-  // store.searchBar = false
   show.value = false
 }
 const getUser = async () => {
   await fetch('https://jsonplaceholder.typicode.com/users')
     .then((res) => res.json())
     .then((json) => (userArr = json))
+  console.log(userArr)
 }
-const searchUser = () => {
-  const filteredUser = userArr.filter((item) =>
-    item.name.toLowerCase().includes(search.value.trim().toLowerCase())
-  )
-  if (filteredUser.length) {
-    newArr(filteredUser)
+const onSearch = (arr, search) => {
+  if (search.length == 0) {
+    return arr
   } else {
-    return userArr
+    return arr.filter((item) => item.name.toLowerCase().includes(search.toLowerCase()))
   }
 }
 
-const newArr = (arr) => {
-  userArr = arr
-}
-onMounted(() => {
-  getUser()
+const keyword = computed(() => {
+  return search.value.split(' ')
 })
+getUser()
+onMounted(() => {})
 </script>

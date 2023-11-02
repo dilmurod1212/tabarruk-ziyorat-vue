@@ -1,24 +1,24 @@
 <template>
   <ul
-    class="absolute top-[100%] right-auto gap-2 bg-white/20 border border-white/30 backdrop-blur-xl rounded-xl p-2"
-    :class="{ 'grid grid-cols-2 left-0': religion.length > 3 }"
+    class="absolute top-[100%] gap-2 bg-white/20 border border-white/30 backdrop-blur-lg rounded-xl p-2"
+    :class="[className, dropData.length > 3 ? 'grid grid-cols-2 ' : '']"
   >
     <li
-      v-for="(el, idx) in religion"
+      v-for="(el, idx) in dropData"
       :key="idx"
       class="p-2 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2 group cursor-pointer"
     >
       <img :src="el.img" alt="" class="" />
       <div class="text-white">
         <h3 class="text-base group-hover:text-red-500 transition-all">{{ el.title }}</h3>
-        <p class="text-sm opacity-60">{{ el.destination }} destinations</p>
+        <p class="text-sm opacity-60">{{ el.descr }} destinations</p>
       </div>
     </li>
   </ul>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 const state = ref(false)
 interface Props {
   item: {
@@ -30,12 +30,10 @@ interface Props {
     religion?: string
   }
 }
-const props = defineProps(['religion'])
-console.log(props)
+const props = defineProps({ dropData: Array, className: String })
 
 const showCountries = () => {
   state.value = !state.value
-  console.log('hover')
 }
 </script>
 
