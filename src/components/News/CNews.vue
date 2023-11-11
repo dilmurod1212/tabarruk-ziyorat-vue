@@ -20,14 +20,14 @@
 
       <div class="text-white flex max-md:gap-4 flex-col justify-between">
         <div class="flex gap-2 p-2 border border-white/20 rounded-xl">
-          <img src="/images/news/Image (1).png" alt="" class="rounded-lg" />
+          <img src="/images/news/Image(1).png" alt="" class="rounded-lg" />
           <div class="flex flex-col justify-between">
             <h2>Organization of Turkic States pledges observer status for Turkish Cyprus</h2>
             <p class="text-white/60">November 10 2022</p>
           </div>
         </div>
         <div class="flex gap-2 p-2 border border-white/20 rounded-xl">
-          <img src="/images/news/Image (2).png" alt="" class="rounded-lg" />
+          <img src="/images/news/Image(2).png" alt="" class="rounded-lg" />
           <div class="flex flex-col justify-between">
             <h2>Turkic states hold key position in Europe’s energy security: Erdoğan ANKARA</h2>
             <p class="text-white/60">November 10 2022</p>
