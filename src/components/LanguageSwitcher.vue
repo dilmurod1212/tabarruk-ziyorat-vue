@@ -1,28 +1,33 @@
 <template>
-  <ul class="cursor-pointer" :class="lanClass">
-    <li @click="showLanguage" @focusout="hide">
-      <img src="/images/TheUK.svg" alt="uk-icon" />
-    </li>
-    <CDropdown v-if="state" :dropData="dropdownCountries" className="right-0 " />
-  </ul>
+  <div class="cursor-pointer" :class="switcherClass">
+    <CDropdown
+      :options="languageSwitcherData"
+      value-key="descr"
+      label-key="title"
+      class-name="right-0"
+      optionsWrapperClass="grid grid-cols-3 gap-1 right-0 max-md:left-0 max-md:grid-cols-2 max-md:right-auto"
+    >
+      <template #header>
+        <img src="/images/TheUK.svg" alt="uk-icon" />
+      </template>
+      <template v-slot:option="slotData">
+        <div class="text-white flex gap-x-2">
+          <img :src="slotData.data.img" :alt="slotData.data.title" />
+          <h2>{{ slotData.data.title }}</h2>
+        </div>
+      </template>
+    </CDropdown>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 import CDropdown from './CDropdown.vue'
-import { dropdownCountries, religions } from '@/data/dropdown.js'
+import { languageSwitcherData } from '../data/dropdown.js'
 
-const props = defineProps({ lanClass: String, data: Array })
-const state = ref(false)
-
-const showLanguage = () => {
-  state.value = !state.value
-  console.log(props.data)
+interface Props {
+  switcherClass: string
 }
-const hide = () => {
-  state.value = !state.value
-  console.log('switch')
-}
+defineProps<Props>()
 </script>
 
 <style scoped></style>

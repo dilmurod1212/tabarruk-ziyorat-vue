@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, onMounted, ref } from 'vue'
+import { defineProps, ref } from 'vue'
 
 interface Props {
   type?: string

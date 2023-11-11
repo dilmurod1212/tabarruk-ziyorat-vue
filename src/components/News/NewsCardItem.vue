@@ -1,8 +1,8 @@
 <template>
   <div
-    class="text-white p-4 max-md:p-2 bg-[#202233] rounded-xl hover:shadow-lg hover:shadow-red-500/50 group duration-200"
+    class="text-white p-4 max-md:p-2 bg-[#202233] rounded-xl hover:shadow-lg hover:shadow-red-500/50 group duration-200 h-full"
   >
-    <img :src="item.img" :alt="item.alt" class="w-full bg-red-400 rounded-lg" />
+    <img :src="item.img" :alt="item.alt" class="w-full" />
     <h3 class="mt-4 group-hover:text-red-500 transition-all max-md:text-sm">
       {{ item.title }}
     </h3>
@@ -19,15 +19,6 @@
 </template>
 
 <script setup lang="ts">
-import { INews } from '@/types/news.ts'
-const getDate = () => {
-  const date = new Date().getDay()
-  const month = new Date().getMonth()
-  const year = new Date().getFullYear()
-
-  return { date, month, year }
-}
-
 interface Props {
   item: {
     id: number

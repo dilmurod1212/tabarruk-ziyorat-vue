@@ -44,7 +44,7 @@ export const languageSwitcherData = [
   { id: 2, title: 'English', img: '/images/language-icons/UK.svg' },
   { id: 3, title: 'O’zbekcha', img: '/images/language-icons/Uzbekistan.svg' },
   { id: 4, title: 'Қазақша', img: '/images/language-icons/Kazakhstan.svg' },
-  { id: 5, title: 'Қыргызча', img: '/images/language-icons/Krgyzstan.svg' },
+  { id: 5, title: 'Қыргызча', img: '/images/language-icons/Kyrgyzstan.svg' },
   { id: 6, title: 'Türk', img: '/images/language-icons/Turkiye.svg' },
   { id: 7, title: 'Türkmen', img: '/images/language-icons/Turkmenistan.svg' },
   { id: 8, title: 'Azərbaycan', img: '/images/language-icons/Azerbaijan.svg' },

@@ -1,13 +1,13 @@
+
 <template>
   <div class="bg-[#111325] -z-20">
-    <router-view v-slot="{ Component }">
-      <transition name="fade" mode="out-in" :duration="200">
-        <component :is="Component" />
-      </transition>
-    </router-view>
+    <home/>
   </div>
 </template>
+<script setup>
+import Home from './layout/Home.vue';
 
+</script>
 <style>
 .fade-enter-active,
 .fade-leave-active {

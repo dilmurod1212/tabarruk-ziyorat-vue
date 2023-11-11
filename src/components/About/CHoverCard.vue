@@ -7,9 +7,7 @@
         class="panel bg-[url('/images/baku.jpeg')]"
         :class="[el.class, el.isActive ? ' active' : '']"
         @mouseover="() => actived(el.id)"
-      >
-        <h3>{{ el.text }}</h3>
-      </div>
+      ></div>
     </div>
   </div>
 </template>
@@ -20,11 +18,11 @@ const panels = reactive([
   {
     text: 'Baku, Azerbaijan',
     class: "bg-[url('/images/baku.jpeg')] ",
-    isActive: false,
+    isActive: true,
     id: 1
   },
   { text: 'Bakuu, Azerbaijan', class: "bg-[url('/images/bukhara.jpeg')]", isActive: false, id: 2 },
-  { text: 'Bakuuu, Azerbaijan', class: "bg-[url('/images/turcey.jpg')]", isActive: true, id: 3 },
+  { text: 'Bakuuu, Azerbaijan', class: "bg-[url('/images/turcey.jpg')]", isActive: false, id: 3 },
   { text: 'Bakuuuu, Azerbaijan', class: "bg-[url('/images/hungary.jpg')]", isActive: false, id: 4 }
 ])
 const actived = (id: number) => {

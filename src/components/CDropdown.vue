@@ -1,40 +1,67 @@
 <template>
-  <ul
-    class="absolute top-[100%] gap-2 bg-white/20 border border-white/30 backdrop-blur-lg rounded-xl p-2"
-    :class="[className, dropData.length > 3 ? 'grid grid-cols-2 ' : '']"
-  >
-    <li
-      v-for="(el, idx) in dropData"
-      :key="idx"
-      class="p-2 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2 group cursor-pointer"
+  <div class="" ref="target">
+    <div @click="onOpen" class="cursor-pointer" tabindex="0">
+      <slot name="header">
+        {{ title }}
+      </slot>
+    </div>
+    <ul
+      v-if="state && options?.length"
+      class="bg-white/20 border border-white/30 backdrop-blur-lg rounded-xl p-2 absolute w-auto mt-4"
+      :class="[optionsWrapperClass]"
     >
-      <img :src="el.img" alt="" class="" />
-      <div class="text-white">
-        <h3 class="text-base group-hover:text-red-500 transition-all">{{ el.title }}</h3>
-        <p class="text-sm opacity-60">{{ el.descr }} destinations</p>
-      </div>
-    </li>
-  </ul>
+      <li
+        v-for="(el, idx) in options"
+        :key="idx"
+        @click="onSelect(el)"
+        :class="[optionClass]"
+        class="p-2 rounded-lg hover:bg-white/10 transition-all gap-2 group cursor-pointer"
+      >
+        <slot :data="el" name="option">
+          <div class="rounded-lg transition-all flex items-center gap-2">
+            <img :src="el.img" alt="" class="" />
+            <div class="text-white">
+              <h3 class="text-base group-hover:text-red-500 transition-all">
+                {{ el[labelKey] }}
+              </h3>
+              <p class="text-sm opacity-60">{{ el[valueKey] }} destinations</p>
+            </div>
+          </div>
+        </slot>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const state = ref(false)
-interface Props {
-  item: {
-    flag?: string
-    icon?: string
-    countryDest?: number
-    religionDest?: number
-    country?: string
-    religion?: string
-  }
-}
-const props = defineProps({ dropData: Array, className: String })
+import { onClickOutside } from '@vueuse/core'
 
-const showCountries = () => {
+interface Props {
+  options: any[]
+  title?: string
+  labelKey: string
+  valueKey: string
+  headerClass?: string
+  optionClass?: string
+  optionsWrapperClass?: string
+}
+defineProps<Props>()
+
+const emit = defineEmits<{
+  (e: 'on-click', value: any): void
+}>()
+const state = ref(false)
+const target = ref(null)
+
+const onOpen = () => {
   state.value = !state.value
 }
+const onSelect = (element) => {
+  emit('on-click', element)
+  state.value = false
+}
+onClickOutside(target, (event) => (state.value = false))
 </script>
 
 <style scoped></style>
