@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h2 class="text-white text-3xl font-playfair capitalize mt-16">news</h2>
-    <div class="grid grid-cols-4 max-lg:grid-cols-3 max-md:grid-cols-2 gap-4 mt-4">
+    <div class="grid grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 mt-4">
       <router-link
         v-for="(item, idx) in newsData"
         :key="idx"
