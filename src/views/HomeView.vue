@@ -6,18 +6,11 @@
     <About />
   </div>
 
-  <div class="container flex justify-between max-md:flex-col gap-4 max-lg:flex-wrap">
-    <CCountryInfo
-      v-for="(el, idx) in countryInfo"
-      :key="idx"
-      :img="el.img"
-      :count="el.count"
-      :info="el.info"
-    />
-  </div>
-  <CCountries />
-  <CReligions />
+  <CCountryInfo :options="countryInfo" wrapper-class="" />
+  <CCountries wrapper-class="" />
+  <CReligions wrapper-class="" />
   <CNews :news="news" />
+  <CInstagram :options="instagram" wrapper-class="" />
   <div class="container grid grid-cols-2 max-md:grid-cols-1 gap-4 py-8">
     <CAccordion
       v-for="(el, idx) in Accordion"
@@ -30,11 +23,10 @@
       @click="showItem(el.id)"
     />
   </div>
-  <CInstagram />
-  
+  <CPartners />
 </template>
 <script setup lang="ts">
-import { ref, reactive, onMounted } from 'vue'
+import { ref } from 'vue'
 import About from '@/components/About/About.vue'
 import CountrySlider from '@/components/CountrySlider.vue'
 import CCountries from '@/components/Countries/CCountries.vue'
@@ -42,13 +34,14 @@ import CCountryInfo from '@/components/CardInfo/CCountryInfo.vue'
 import CReligions from '@/components/Religions/CReligions.vue'
 import CNews from '@/components/News/CNews.vue'
 import CAccordion from '@/components/Accordion/CAccordion.vue'
-import CInstagram from '@/components/Instagram/CInstagram.vue'
+import CPartners from '@/components/Partners/CPartners.vue'
 import news from '@/data/newsCard.js'
 import { Accordion } from '@/data/accordion.js'
 import { countryInfo } from '@/data/countryInfo.js'
+import { instagram } from '@/data/instagram.js'
 import CHero from '@/components/Hero/CHero.vue'
+import CInstagram from '@/components/Instagram/CInstagram.vue'
 
-const input = ref('')
 const activeItem = ref(0 || null)
 
 const showItem = (id) => {

@@ -1,5 +1,7 @@
 <template>
-  <router-link to="/" ><img src="/images/Logo.svg" alt="logo" /></router-link>
+  <div>
+    <h2 class="mt-[100px] text-red-300">buddism</h2>
+  </div>
 </template>
 
 <script setup lang="ts"></script>

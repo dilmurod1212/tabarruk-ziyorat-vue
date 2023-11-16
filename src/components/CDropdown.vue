@@ -1,7 +1,7 @@
 <template>
   <div class="" ref="target">
     <div @click="onOpen" class="cursor-pointer" tabindex="0">
-      <slot name="header">
+      <slot  name="header">
         {{ title }}
       </slot>
     </div>
@@ -14,11 +14,11 @@
         v-for="(el, idx) in options"
         :key="idx"
         @click="onSelect(el)"
-        :class="[optionClass]"
-        class="p-2 rounded-lg hover:bg-white/10 transition-all gap-2 group cursor-pointer"
+        :class="{ optionClass }"
+        class="transition-all gap-2 group cursor-pointer"
       >
         <slot :data="el" name="option">
-          <div class="rounded-lg transition-all flex items-center gap-2">
+          <div class="p-2 rounded-lg hover:bg-white/10 transition-all flex items-center gap-2">
             <img :src="el.img" alt="" class="" />
             <div class="text-white">
               <h3 class="text-base group-hover:text-red-500 transition-all">

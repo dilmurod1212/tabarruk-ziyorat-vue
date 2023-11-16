@@ -12,7 +12,7 @@
     <div class="flex justify-between items-center">
       <p>{{ item.date }}</p>
       <i
-        class="fas fa-arrow-right cursor-pointer text-red-500 relative right-10 opacity-0 group-hover:opacity-100 group-hover:right-0 transition-all"
+        class="fas fa-arrow-right cursor-pointer relative right-10 opacity-0 group-hover:opacity-100 group-hover:right-0 transition-all"
       ></i>
     </div>
   </div>
@@ -32,4 +32,3 @@ interface Props {
 defineProps<Props>()
 </script>
 
-<style scoped></style>

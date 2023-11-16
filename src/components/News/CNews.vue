@@ -35,12 +35,13 @@
         </div>
       </div>
     </div>
-    <div></div>
-    <router-link to="/news" class="flex justify-end mt-4">
-      <Button type="button" btnClass="z-10 text-white " variant="dark"
-        >All news <i class="fas fa-arrow-right"></i
-      ></Button>
-    </router-link>
+    <div class="flex justify-end mt-4">
+      <router-link to="/news">
+        <Button type="button" btnClass="z-10 text-white " variant="dark"
+          >All news <i class="fas fa-arrow-right"></i
+        ></Button>
+      </router-link>
+    </div>
   </div>
 </template>
 

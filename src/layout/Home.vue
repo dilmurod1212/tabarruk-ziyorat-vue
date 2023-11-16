@@ -1,7 +1,6 @@
 <template>
   <div class="flex flex-col">
     <Header />
-    <!-- <Navigation /> -->
     <main class="grow">
       <router-view v-slot="{ Component }">
         <transition name="fade">

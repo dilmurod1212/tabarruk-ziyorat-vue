@@ -29,4 +29,3 @@ if (props.variant == 'red') {
 
 </script>
 
-<style lang="scss" scoped></style>

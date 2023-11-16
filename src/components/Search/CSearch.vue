@@ -1,7 +1,7 @@
 <template>
   <div
     @focusout="hideSearchBar"
-    class="top-[-50%] overflow-hidden rounded-lg absolute right-10 w-[550px] max-lg:w-[300px] max-md:w-full h-auto z-10 backdrop-blur-xl"
+    class="rounded-lg relative lg:w-[550px] md:w-[300px] w-full h-auto z-10"
     :class="searchClass"
   >
     <div>
@@ -10,14 +10,17 @@
         placeholder="Enter a key word"
         v-model="search"
         @on-focus="show = true"
-        class="z-10 h-full"
+        class="z-10 h-full backdrop-blur-lg"
       />
       <!-- <div @click="state = !state">
         <i v-if="state" class="fas fa-search"></i>
         <i v-else class="fas fa-close"></i>
       </div> -->
     </div>
-    <ul class="rounded-lg border-1 border-white/20 bg-white/10 backdrop-blur-xl pl-4 mt-4">
+    <ul
+      v-show="show"
+      class="rounded-lg max-h-[300px] w-full absolute overflow-y-scroll border-1 border-white/20 bg-white/10 backdrop-blur-lg pl-4 mt-4"
+    >
       <li
         v-show="onSearch(userArr, search).length"
         v-for="(user, idx) in onSearch(userArr, search)"

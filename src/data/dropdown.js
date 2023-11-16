@@ -40,9 +40,9 @@ export const religions = [
 ]
 
 export const languageSwitcherData = [
-  { id: 1, title: 'Русский', img: '/images/language-icons/Russia.svg' },
-  { id: 2, title: 'English', img: '/images/language-icons/UK.svg' },
-  { id: 3, title: 'O’zbekcha', img: '/images/language-icons/Uzbekistan.svg' },
+  { id: 1, title: 'Русский', img: '/images/language-icons/Russia.svg', lan: 'ru' },
+  { id: 2, title: 'English', img: '/images/language-icons/UK.svg', lan: 'en' },
+  { id: 3, title: 'O’zbekcha', img: '/images/language-icons/Uzbekistan.svg', lan: 'uz' },
   { id: 4, title: 'Қазақша', img: '/images/language-icons/Kazakhstan.svg' },
   { id: 5, title: 'Қыргызча', img: '/images/language-icons/Kyrgyzstan.svg' },
   { id: 6, title: 'Türk', img: '/images/language-icons/Turkiye.svg' },

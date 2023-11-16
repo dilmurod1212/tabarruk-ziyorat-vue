@@ -1,44 +1,52 @@
 <template>
-  <ul class="flex gap-4 text-white max-lg:hidden relative" :class="navClass">
-    <li>
-      <router-link to="/about">About us</router-link>
-    </li>
-    <li>
-      <CDropdown
-        :options="dropdownCountries"
-        value-key="descr"
-        label-key="title"
-        class-name="right-0"
-        option-class=" last:mb-0 "
-        optionsWrapperClass="grid grid-cols-2 gap-2 left-0"
-      >
-        <template #header>
-          <h2>Countries</h2>
-        </template>
-      </CDropdown>
-    </li>
-    <li @click="showReligion = !showReligion" @focusout="showReligion = false">
-      <CDropdown
-        :options="religions"
-        value-key="descr"
-        label-key="title"
-        class-name="right-0"
-        option-class=" last:mb-0 mb-1"
-        optionsWrapperClass=""
-        @on-click="onDropdownClick"
-      >
-        <template #header>
-          <h2>Religions</h2>
-        </template>
-      </CDropdown>
-    </li>
-    <li>
-      <a href="#">Heritage map</a>
-    </li>
-    <li>
-      <a href="#">Help</a>
-    </li>
-  </ul>
+  <nav>
+    <ul
+      class="flex gap-4 text-white max-lg:hidden relative"
+      :class="navClass"
+      @click="$emit('close')"
+    >
+      <li>
+        <router-link to="/about"
+          ><h2 class="capitalize">{{ $t('about') }}</h2></router-link
+        >
+      </li>
+      <li>
+        <CDropdown
+          :options="dropdownCountries"
+          value-key="descr"
+          label-key="title"
+          class-name="right-0"
+          option-class=" last:mb-0 "
+          optionsWrapperClass="grid grid-cols-2 gap-2 left-0"
+        >
+          <template #header>
+            <h2 class="capitalize">{{ $t('countries') }}</h2>
+          </template>
+        </CDropdown>
+      </li>
+      <li @click="showReligion = !showReligion" @focusout="showReligion = false">
+        <CDropdown
+          :options="religions"
+          value-key="descr"
+          label-key="title"
+          class-name="right-0"
+          option-class=" last:mb-0 mb-1"
+          optionsWrapperClass=""
+          @on-click="onDropdownClick"
+        >
+          <template #header>
+            <h2 class="capitalize">{{ $t('religions') }}</h2>
+          </template>
+        </CDropdown>
+      </li>
+      <li>
+        <h2 class="capitalize">{{ $t('haritage') }}</h2>
+      </li>
+      <li>
+        <h2 class="capitalize">{{ $t('help') }}</h2>
+      </li>
+    </ul>
+  </nav>
 </template>
 
 <script setup lang="ts">
@@ -48,7 +56,6 @@ const showReligion = ref(false)
 import { dropdownCountries, religions } from '@/data/dropdown.js'
 import CDropdown from './CDropdown.vue'
 defineProps({ navClass: String })
-
 
 const onDropdownClick = (element) => {
   console.log(element, 'on dropdown option click')
